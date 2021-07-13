@@ -2,6 +2,10 @@
 This is an upgrade from the previous [portfolio](https://thelocalhost.netlify.app/), and will tie in nicely with other video projects.
 
 
+## Documents
+[MVP board](https://trello.com/b/dz7IZgio/my-website)
+
+
 ## Purpose
 
 - Write blogs and development regarding data science and tech
