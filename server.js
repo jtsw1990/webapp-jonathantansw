@@ -30,3 +30,8 @@ app.get("/articles", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about");
 })
+
+
+app.get("/videos", (req, res) => {
+    res.render("videos");
+})
