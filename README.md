@@ -17,7 +17,6 @@ This is an upgrade from the previous [portfolio](https://thelocalhost.netlify.ap
 - A link to repository??
 - Share article buttons
 - Mailing list
-- 
 
 
 

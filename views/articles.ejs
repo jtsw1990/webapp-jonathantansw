@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head"); %>
+</head>
+
+<body>
+    <%- include("partials/navbar"); %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <%- include("partials/titlecard", { title: "PLACEHOLDER_1" , photo: "/img/placeholder.jpg" ,
+                        description: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        }); %>
+                </div>
+                <div class="col-sm-4">
+                    <%- include("partials/titlecard", { title: "PLACEHOLDER_1" , photo: "/img/placeholder.jpg" ,
+                        description: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        }); %>
+                </div>
+                <div class="col-sm-4">
+                    <%- include("partials/titlecard", { title: "PLACEHOLDER_1" , photo: "/img/placeholder.jpg" ,
+                        description: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        }); %>
+                </div>
+            </div>
+            
+        </div>
+</body>
+
+</html>
