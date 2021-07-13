@@ -15,5 +15,15 @@ This is an upgrade from the previous [portfolio](https://thelocalhost.netlify.ap
 - About me page with downloadable resume??
 - A comments/contact me section for each article???
 - A link to repository??
+- Share article buttons
+- Mailing list
+- 
 
+
+
+## Stack
+[Nodejs](#)
+[Express](#)
+[EJS](#)
+[Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
