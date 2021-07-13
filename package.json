@@ -1,0 +1,24 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "Placeholder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtsw1990/my-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtsw1990/my-website/issues"
+  },
+  "homepage": "https://github.com/jtsw1990/my-website#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
