@@ -4,6 +4,7 @@ This is an upgrade from the previous [portfolio](https://thelocalhost.netlify.ap
 
 ## Documents
 [MVP board](https://trello.com/b/dz7IZgio/my-website)
+[Timeline Googlesheet](https://docs.google.com/spreadsheets/d/1vJ5wMNx1YcUgKz0vYcmP7RuJFyRvZwQSXub28TLHMjE/edit#gid=0)
 
 
 ## Purpose
