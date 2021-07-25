@@ -21,6 +21,7 @@ function simpleLinearRegressor(x, intercept=leastSquaresIntercept, slope=leastSq
     return slope * x + intercept
 }
 
+
 var leastSquaresWidget = document.getElementById("leastSquaresWidget");
 let mixedChart = new Chart(leastSquaresWidget, {
     data: {
@@ -58,16 +59,7 @@ let mixedChart = new Chart(leastSquaresWidget, {
             type: "line",
             label: "My Line",
             data: [
-                leastSquaresSlope * sampleX[0] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[1] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[2] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[3] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[4] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[5] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[6] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[7] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[8] + leastSquaresIntercept,
-                leastSquaresSlope * sampleX[9] + leastSquaresIntercept
+                sampleX.map(x => simpleLinearRegressor(x))
             ],  backgroundColor: "rgb(132, 99, 255)"
         }],
         labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -82,7 +74,7 @@ $("#intercept, #slope").on("change", () => {
     slopeFloat = parseFloat(document.getElementById("slope").value)
     interceptFloat = parseFloat(document.getElementById("intercept").value)
     var updatedValues = sampleX.map(x => (x * slopeFloat) + interceptFloat);
-    console.log(updatedValues)
+    //console.log(updatedValues)
     mixedChart.data.datasets[2].data = updatedValues
     mixedChart.update()
 });

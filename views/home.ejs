@@ -21,7 +21,13 @@
                     <div class="col-sm-6">
                         <canvas id="myChart" width="200" height="200"></canvas>
                     </div>
-                    <div class="col-sm-6">Some text for widget?</div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="display-4">Placeholder Title</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="shadow-xs jumbotron mt-2">
@@ -29,13 +35,41 @@
                     <div class="col-sm-6">
                         <div class="row">
                             <div class="col">
-                                <h3 class="lead">Simple Linear Regression</h3>
+                                <h3 class="display-4">Simple Linear Regression</h3>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <input type="range" class="slider" value="2.4567717996289424" min="0" max="3" id="intercept">
-                                <input type="range" class="slider" value="0.18738404452690166" min="0" max="1" id="slope">
+                                The Simple Linear Regressor is the OG machine learning algorithm.
+                                It is as powerful as it is simple, and is used in a wide variety of problems and
+                                industries.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                Parameter settings:
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="range" class="slider" value="2.4567717996289424" min="0.0" max="4.0"
+                                    step="0.5" id="intercept"><label for="intercept">Intercept</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="range" class="slider" value="0.18738404452690166" min="0.0" max="1.0"
+                                    step="0.1" id="slope"><label for="intercept">Slope</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                Errors
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                Table comparing errors?
                             </div>
                         </div>
                         <div class="row">
@@ -54,7 +88,6 @@
             </div>
         </div>
 </body>
-
 <script src="/js/placeholder.js"></script>
 <script src="/js/slr.js"></script>
 
