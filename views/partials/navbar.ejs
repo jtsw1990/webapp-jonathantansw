@@ -6,17 +6,37 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class=<% if (currentPage.includes('home')) { %>
+                    "nav-link active"
+                    <% } else { %>
+                    "nav-link" 
+                    <% } %>
+                    href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="articles">Articles & Projects</a>
+                <a class=<% if (currentPage.includes('article')) { %>
+                    "nav-link active"
+                    <% } else { %>
+                    "nav-link" 
+                    <% } %>
+                    href="/articles">Articles & Projects</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="videos">Videos</a>
+                <a class=<% if (currentPage.includes('videos')) { %>
+                    "nav-link active"
+                    <% } else { %>
+                    "nav-link" 
+                    <% } %>
+                    href="/videos">Videos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about">About</a>
+                <a class=<% if (currentPage.includes('about')) { %>
+                    "nav-link active"
+                    <% } else { %>
+                    "nav-link" 
+                    <% } %>
+                    href="/about">About</a>
             </li>
         </ul>
     </div>

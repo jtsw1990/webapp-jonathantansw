@@ -12,7 +12,7 @@
             <div class="shadow-xs jumbotron mt-2">
                 <div class="row">
                     <div class="col">
-                        Short Intro
+                        Raw data is meaningless until converted into useful information.
                     </div>
                 </div>
             </div>
@@ -38,16 +38,20 @@
                                 <h3 class="display-4">Simple Linear Regression</h3>
                             </div>
                         </div>
+                        <hr class="my-3">
                         <div class="row">
                             <div class="col">
-                                The Simple Linear Regressor is the OG machine learning algorithm.
-                                It is as powerful as it is simple, and is used in a wide variety of problems and
-                                industries.
+                                The Simple Linear Regressor is the OG machine learning algorithm and is constrained by a
+                                line. It uses the Least Squares method in order to calculated the "best-fit line" in a
+                                given dataset. Try out the widget
+                                to see how close
+                                you can get to the best fit line by manually tweaking the parameters and read the full
+                                article to learn more about Simple Linear Regression.
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-2">
                             <div class="col">
-                                Parameter settings:
+                                <p>Parameter settings:</p>
                             </div>
                         </div>
                         <div class="row">
@@ -63,13 +67,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                Errors
+                            <div class="col-sm-6">
+                                Errors:<p id="sumSquaredResiduals" class="lead"></p>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                Table comparing errors?
+                            <div class="col-sm-6">
+                                Minimized Error:<p id="leastSquaresResiduals" class="lead"></p>
                             </div>
                         </div>
                         <div class="row">
@@ -84,7 +86,7 @@
                 </div>
             </div>
             <div class="shadow-xs jumbotron mt-2">
-                Community badges
+                <h3 class="display-4">Content Statistics</h3>
             </div>
         </div>
 </body>

@@ -9,17 +9,143 @@
     <%- include("partials/navbar"); %>
 
         <div class="container">
-            <div class="shadow-xs jumbotron mt-2">
-                <div class="row">
-                    <div class="col">
-                        <iframe
-                            src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1vJ5wMNx1YcUgKz0vYcmP7RuJFyRvZwQSXub28TLHMjE&font=Default&lang=en&initial_zoom=2&height=650'
-                            width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen
-                            frameborder='0'></iframe>
+
+            <div class="row">
+                <div class="col">
+                    <iframe
+                        src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1vJ5wMNx1YcUgKz0vYcmP7RuJFyRvZwQSXub28TLHMjE&font=Default&lang=en&initial_zoom=2&height=650'
+                        width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen
+                        frameborder='0'></iframe>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Aviva Ltd - Actuarial Executive
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Quarterly actuarial reporting to MAS (Monetary Authority of Singapore)</li>
+                                        <li>Automation of analysis and reporting processes on MS Access SQL and VBA</li>
+                                        <ul>
+                                            <li> Reduced reporting steps by approximately 40% through subroutines and scripts</li>
+                                            <li>Negated the use of manual adjustments for lapsed/expired/surrendered policies</li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        nib Health Funds - Actuarial Analyst
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Writing and maintaining ETLs in SQL Server/ Snowflake/ Python for monthly reporting requirements</li>
+                                        <li>Parametric earnings modelling with MLE and goodness of fit using Scipy</li>
+                                        <li>Automation of recurring reporting and scraping processes using Python and VBA</li>
+                                        <li>Technical pricing models based on claims frequency and severity:</li>
+                                        <ul>
+                                            <li>Gradient Boosted Machines with XGBoost and h2o</li>
+                                            <li>Generalised Linear models with Scipy</li>
+                                        </ul>
+                                        <li>TF-IDF model and clustering for claim segmentation using h2o for new claims data from M&A</li>
+                                        <li>Support underwriting function and decision making:</li>
+                                        <ul>
+                                            <li>Building travel alert and embargo decision chatbot using Python Slack RTM API</li>
+                                            <li>Loss ratio analysis for insurance partner endorsements</li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        IAG - Pricing Engine Analyst
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Development and deployment of automation scripts</li>
+                                        <ul>
+                                            <li>Reduced rate setting process by ~70% with data pipeline in Python3</li>
+                                            <li>Eliminated manual testing processes across departments with automated API requests in R</li>
+                                            <li>Automated conversion between flat structures and JSON formatted data</li>
+                                            <li>Automated requests to EARNIX server for batch runs</li>
+                                        </ul>
+                                        <li>Integration of database tables into excel through db2 drivers to eliminate accessibility issues</li>
+                                        <li>Systems and integration testing of Home/Motor algorithms with Postman and R</li>
+                                        <li>Rate setting and pricing for Strata portfolio</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        IAG - Pricing Engine Dev. Lead (Niche)
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                    <li>Pricing algorithm development lead for niche portfolios (Caravan, Trailer, Motorcycle, Strata)</li>
+                                    <ul>
+                                        <li>Design and development of algorithms from technical cost to final premium using EARNIX</li>
+                                        <li>Planning and resource allocation for dev team using the AGILE framework</li>
+                                        <li>Stakeholder management between product and technology teams</li>
+                                </ul>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        nib Health Funds - Sr. Data Scientist (Travel)
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    To be updated.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
 </body>
 
