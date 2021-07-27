@@ -19,12 +19,40 @@
             <div class="shadow-xs jumbotron mt-2">
                 <div class="row">
                     <div class="col-sm-6">
-                        <canvas id="myChart" width="200" height="200"></canvas>
+                        <div id="myDiv"></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="row">
                             <div class="col">
-                                <h3 class="display-4">Placeholder Title</h3>
+                                <h3 class="display-4">Feature Engineering Explained</h3>
+                            </div>
+                        </div>
+                        <hr class="my-3">
+                        <div class="row">
+                            <div class="col">
+                                What is feature engineering and why are we taught to add seemingly useless variations of
+                                certain features
+                                to our dataset in the hopes of a "better prediction"?
+                                The plot shows a very simple example of a 9-point dataset. Say we wanted to model a straight line to separate/ classify the red and blue points. 
+                                Without bending the line, this would be impossible. What happens when we add an extra calculated column to the dataset?
+                                Click on the "Add feature" button to find out! 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="btn btn-secondary btn-sm" id="add_feature">Add x<sup>2</sup> feature</a>
+                                    <a class="btn btn-secondary btn-sm" id="remove_feature">Remove x<sup>2</sup> feature</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                Now see if you can then use a flat plane (the straight line equivalent in 3d)
+                                to split the red and blue points.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
                     </div>
