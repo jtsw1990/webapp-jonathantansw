@@ -20,52 +20,87 @@
                     <p class="lead">Introduction</p>
                 </div>
             </div>
-          
-                    <p>
-                        This entry will attempt to give the reader an in-depth dive into simple linear regression (SLR).
-                        This
-                        includes the mathematics and
-                        the main assumptions behind it, as well as how to interpret the results. SLR in a nutshell is a
-                        predictive
-                        model, and like all other predictive models,
-                        its main purpose is to try and:
-                    </p>
-                    <ul>
-                        <li>Quantify the dependencies between some observed phenomena</li>
-                        <li>Predict their future behavior</li>
-                    </ul>
-                    <p>
-                        What separates SLR from other models is that SLR attempts to achieve this with a straight line.
-                        It
-                        is one of
-                        the oldest and simplest <span class="badge badge-primary" data-toggle="tooltip"
-                            data-placement="top"
-                            title="Assumes that the data follows a certain statistical distribution">parametric</span>
-                        statistical models
-                        (or <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
-                            title="Models trained on datasets with a dependant variable">supervised</span> machine
-                        learning
-                        algorithms), and forms the basis for many more complex ones.
-                        By understanding the inner workings and shortcomings of SLR, one would have a good foundation to
-                        expand their knowledge to other machine learning algorithms,
-                        as well as apply the concepts learnt in SLR to implement best practices in future modelling
-                        exercises.
-                    </p>
-       
-            <div class="row">
-                <div class="col">
-                    <p class="lead">What is a straight line?</p>
-                </div>
-            </div>
+
             <p>
-                Given that the main feature of SLR models use a straight line to model phenomena, it would be a good idea to revisit the idea
-                of what a line is mathematically. 
+                This entry will attempt to give the reader an in-depth dive into simple linear regression (SLR).
+                This
+                includes the mathematics and
+                the main assumptions behind it, as well as how to interpret the results. SLR in a nutshell is a
+                predictive
+                model, and like all other predictive models,
+                its main purpose is to try and:
+            </p>
+            <ul>
+                <li>Quantify the dependencies between some observed phenomena</li>
+                <li>Predict their future behavior</li>
+            </ul>
+            <p>
+                What separates SLR from other models is that SLR attempts to achieve this with a straight line.
+                It
+                is one of
+                the oldest and simplest <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
+                    title="Assumes that the data follows a certain statistical distribution">parametric</span>
+                statistical models
+                (or <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
+                    title="Models trained on datasets with a dependant variable">supervised</span> machine
+                learning
+                algorithms), and forms the basis for many more complex ones.
+                By understanding the inner workings and shortcomings of SLR, one would have a good foundation to
+                expand their knowledge to other machine learning algorithms,
+                as well as apply the concepts learnt in SLR to implement best practices in future modelling
+                exercises. This article is broken up into several distinct sections, and depending on your level, you can choose
+                to skip some of the refresher content.
             </p>
             <div class="row">
                 <div class="col">
-                    <p class="lead">The best-fit line</p>
+                    <p class="lead">Refresher: What is a straight line?</p>
                 </div>
             </div>
+            <p>
+                Given that the main feature of SLR models use a straight line to model phenomena, it would be a good
+                idea to revisit the idea
+                of what a line is mathematically. If you can recall from high school, a line in 2-dimensional space can
+                be defined as:
+
+                $$ { y = mx + b } $$
+
+                Here, y and x are the horizontal and vertical coordinates, m is the slope of the line, and b is the
+                intercept.
+                The intercept is basically where the line crosses the y-axis. The slope, or the gradient of the line,
+                can be calculated as:
+                $${ m = \frac{ y_2 - y_1 }{ x_2 - x_1 } }$$
+
+                Now with these parameters, we can construct any possible 2-dimensional line.
+
+            </p>
+            <div class="row">
+                <div class="col">
+                    <p class="lead">The Regression model</p>
+                </div>
+            </div>
+
+            The simple linear regression model can be defined as follows:
+
+            $${ y_i = \beta_0 + \beta_1 x_i + \epsilon }$$
+
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Interactive widget
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            testing
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col">
                     <p class="lead">How to interpret results?</p>
