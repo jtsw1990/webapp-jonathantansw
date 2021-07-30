@@ -42,6 +42,13 @@ app.get("/articles/linear_regression", (req, res) => {
     });
 })
 
+app.get("/articles/feature_engineering", (req, res) => {
+    res.render("pages/feature_engineering", {
+        currentPage: req.originalUrl
+    });
+})
+
+
 app.get("/about", (req, res) => {
     res.render("about", {
         currentPage: req.originalUrl
