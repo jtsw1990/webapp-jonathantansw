@@ -76,8 +76,8 @@ let mixedChart = new Chart(leastSquaresWidget, {
 
 $("#intercept, #slope").on("change", () => {
     // On slider change, calculate the new slope and intercept
-    slopeFloat = parseFloat(document.getElementById("slope").value)
-    interceptFloat = parseFloat(document.getElementById("intercept").value)
+    slopeFloat = parseFloat(document.getElementById("slope").value);
+    interceptFloat = parseFloat(document.getElementById("intercept").value);
     // Apply new parameters to linear estimate
     var updatedValues = sampleX.map(x => (x * slopeFloat) + interceptFloat);
     var squaredResiduals = sampleY.map((num, idx) => {
@@ -88,8 +88,8 @@ $("#intercept, #slope").on("change", () => {
     // Rounded to 2dp
     $("#sumSquaredResiduals").html(Math.round(sumSquaredResiduals * 100) / 100);
     // Update the dataset values in chart object for the last line graph
-    mixedChart.data.datasets[2].data = updatedValues
-    mixedChart.update()
+    mixedChart.data.datasets[2].data = updatedValues;
+    mixedChart.update();
 });
 
 
