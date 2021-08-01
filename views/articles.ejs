@@ -39,18 +39,19 @@
             </div>
             <div class="row mt-2">
                 <div class="col-sm-4">
-                    <%- include("partials/titlecard", {
-                        title: "Simple Linear Regression: The only guilde you will ever need" ,
-                        photo: "/img/placeholder.jpg" , description: "placeholder" , link: "/articles/linear_regression" }); %>
+                    <%- include("partials/titlecard", { title: "The Simple Linear Regression Guide" ,
+                        photo: "/img/slr.png" ,
+                        description: "This entry will attempt to give the beginner an in-depth dive into simple linear regression (SLR). This includes the mathematics and the main assumptions behind it, as well as how to interpret the results..."
+                        , link: "/articles/linear_regression" }); %>
                 </div>
                 <div class="col-sm-4">
-                    <%- include("partials/titlecard", {
-                        title: "Placeholder title" ,
-                        photo: "/img/placeholder.jpg" , description: "placeholder" , link: "#" }); %>
+                    <%- include("partials/titlecard", { title: "Placeholder title" , photo: "/img/placeholder.jpg" ,
+                        description: "placeholder" , link: "#" }); %>
                 </div>
             </div>
 
         </div>
+        <%- include("partials/footer"); %>
 </body>
 
 </html>

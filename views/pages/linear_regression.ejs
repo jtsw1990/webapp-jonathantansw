@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-4">Simple Linear Regression: The comprehensive guide</h1>
+                    <h1 class="display-4">Simple Linear Regression: The Repository</h1>
                 </div>
             </div>
             <hr class="my-4">
@@ -22,26 +22,27 @@
             </div>
 
             <p>
-                This entry will attempt to give the reader an in-depth dive into simple linear regression (SLR).
-                This
-                includes the mathematics and
-                the main assumptions behind it, as well as how to interpret the results. SLR in a nutshell is a
-                predictive
-                model, and like all other predictive models,
+                This entry will attempt to give the beginner an in-depth dive into simple linear regression (SLR).
+                This includes the mathematics and
+                the main assumptions behind it, as well as how to interpret the results.
+                What this entry will not cover is the programmatic implementation, as well as the workarounds in
+                implementations for certain mathematical processes in statistical packages like sklearn.
+                This will also act as a repository of information relating to the SLR model for future references.
+                SLR in a nutshell is a predictive model, and like all other predictive models,
                 its main purpose is to try and:
-            </p>
+
             <ul>
                 <li>Quantify the dependencies between some observed phenomena</li>
                 <li>Predict their future behavior</li>
             </ul>
+
+            </p>
             <p>
                 What separates SLR from other models is that SLR attempts to achieve this with a straight line.
-                It
-                is one of
-                the oldest and simplest <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
+                It is one of the oldest and simplest <span class="badge badge-primary" data-toggle="tooltip"
+                    data-placement="top"
                     title="Assumes that the data follows a certain statistical distribution">parametric</span>
-                statistical models
-                (or <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
+                statistical models (or <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
                     title="Models trained on datasets with a dependant variable">supervised</span> machine
                 learning
                 algorithms), and forms the basis for many more complex ones.
@@ -104,7 +105,10 @@
             makes perfect sense
             since the goal of a SLR model is to model some data with a line in the first place. The \(x_i\) and \(y_i\)
             terms here represent our datapoints and
-            response values respectively. The \(\beta_0\) and \(\beta_1\) term, which defines the intercept and slope of
+            response values respectively. In simple terms, we can think of \(y_i\) as the result that we want to explain
+            and
+            \(x_i\) as the feature that we believe will influence \(y_i\).
+            The \(\beta_0\) and \(\beta_1\) term, which defines the intercept and slope of
             the line. While we note that these
             2 terms can take any numerical value and we'd still create a line, what we really want to do is to find the
             values for these 2 terms that creates
@@ -123,8 +127,40 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="assumptions" data-parent="#assumptions">
                         <div class="card-body">
                             <p class="lead">1. Residuals are normally distributed</p>
+                            <p>
+                                This assumes that the residuals, defined as \(y_{actual} - y_{modelled}\) follow a
+                                normal distrubtion.
+                                We can validate this assumption visually by plotting <span class="badge badge-primary"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="Quantile-quantile plots are a type of scatter plot for comparing 2 distributions by plotting their quantiles against each other">
+                                    QQ-Plots</span> or histogram post model fitting, which we will explore in the
+                                later section. Or for a more numerical method, we can use the Jarque-Bera (JB) test to
+                                check this assumption.
+                            </p>
                             <p class="lead">2. Variance of residuals are constant</p>
+                            <p>
+                                The official term for this is homoscedasticity. This means that the variability of
+                                \(y_i\) remains constant across
+                                different values of \(x_i\). This can be validated visually by plotting a scatterplot of
+                                the model predictions and the residual values.
+                                If there is a change of variability between the \(X\) values, we say that the data is
+                                heteroscedastic.
+                            </p>
                             <p class="lead">3. Residuals are indepdendent of each other</p>
+                            <p>
+                                Another way of stating this is that we do not want any autocorrelation between the model
+                                residuals. If we observed some
+                                dependent relationships betwene our residuals, that means that our SLR model is not
+                                capturing/ modelling the correlation between
+                                the \(x_i\) well enough.
+                            </p>
+                            <p class="lead">4. Linearity between \(X\) and \(Y\)</p>
+                            <p>
+                                SLR is afterall a linear model. If there is any numerical or visual evidence from the
+                                data that suggests
+                                otherwise, we could either rescale the data to a log-scale or use a different model
+                                altogether.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -238,7 +274,7 @@
 
                             Which can be solved algbraically or with a system of equations, to give us the formulae:
 
-                            $${ \beta_1 = \frac{\Sigma_i x_i \Sigma_i y_i - n \Sigma_i x_i y_i }{(\Sigma_i x_i)^2 -
+                            $${ \beta_1 = \frac{\Sigma_i x_i \Sigma_i y_i - n \Sigma_i x_i y_i }{(\Sigma_i {x_i}^2) -
                             n\Sigma_i (x_i)^2} }$$
                             $${ \beta_0 = \frac{1}{n}(\Sigma_i y_i - \beta_1 \Sigma_i x_i) }$$
                         </div>
@@ -248,7 +284,7 @@
             <p>
                 By applying the concepts of optimizing the squared errors and some algebraic manipulation, we end up
                 with the formulae:
-                $${ \beta_1 = \frac{\Sigma x_i \Sigma y_i - n \Sigma x_i y_i }{(\Sigma x_i)^2 - n\Sigma (x_i)^2} }$$
+                $${ \beta_1 = \frac{\Sigma x_i \Sigma y_i - n \Sigma x_i y_i }{(\Sigma {x_i}^2) - n\Sigma (x_i)^2} }$$
                 $${ \beta_0 = \frac{1}{n}(\Sigma y_i - \beta_1 \Sigma x_i) }$$
 
                 While this seems somewhat cryptic at first, if we take a closer look at the results, we see that each of
@@ -376,22 +412,104 @@
                 <li>We can be 95% confident that \(y\) will take values between \(1.5 \pm{} 1.645 *
                     \frac{\sigma}{\sqrt{n}} \)</li>
             </ol>
-            </p>
-            <div class="row">
-                <div class="col">
-                    <p class="lead">Validating the results</p>
-                </div>
-            </div>
-            <p>
+    
                 Now that we've understood the main resulting formula and what the \(\beta_0\) and \(\beta_1\)
                 coefficients mean, the SLR output
                 provides us with more pieces of information which we can use to evaluate how "good" of a job our model
                 is actually doing on
-                approximating the data.
+                approximating the data. Note that some of these are more useful and commonly seen in programming libraries than others.
+                Along with the explanations below, there is an included spreadsheet <a href="/assets/slr_output.xlsx" download>here</a> that uses the sample data in example above
+                to reverse engineer all the regression outputs.
             </p>
-            <p class="lead">P-Value</p>
-            <p class="lead">Coefficient of determination</p>
-            <p class="lead">Residual Plots</p>
+            <div class="accordion" id="validate">
+                <div class="card">
+                    <div class="card-header" id="validate">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#validateOne"
+                                aria-expanded="true" aria-controls="validateOne">
+                                P-Value
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="validateOne" class="collapse" aria-labelledby="validate" data-parent="#validate">
+                        <div class="card-body">
+                            <p>
+                                The p-value, is simply a probability of observing the given results under the assumption
+                                that the null
+                                hypothesis is correct.
+                                Keeping that in mind, we'd expect that a smaller value would provide stronger evidence
+                                that the
+                                resulting
+                                coefficients from our SLR model are more likely to be a meaningful addition as changes
+                                in the term are
+                                related
+                                to the changes in the response. A common benchmark used is a p-value lower than 5% to
+                                deem a term
+                                meaningful.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="validate">
+                <div class="card">
+                    <div class="card-header" id="validate">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#validateTwo"
+                                aria-expanded="true" aria-controls="validateTwo">
+                                Coefficient of determination \(R^2\)
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="validateTwo" class="collapse" aria-labelledby="validate" data-parent="#validate">
+                        <div class="card-body">
+                            <p>
+                                \(R^2\) as it is more commonly known, is generally a measure of how well the SLR model fits the data.
+                                More specifically, it is a statistical measure that tells us the proportion of the variance for a
+                                response that is explained
+                                by the term in the SLR, and is defined by the following formula:
+                                $${ R^2 = 1 - \frac{SS_{regression}}{SS_{total}} }$$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="validate">
+                <div class="card">
+                    <div class="card-header" id="validate">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#validateThree"
+                                aria-expanded="true" aria-controls="validateThree">
+                                Residual Plots
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="validateThree" class="collapse" aria-labelledby="validate" data-parent="#validate">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="validate">
+                <div class="card">
+                    <div class="card-header" id="validate">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#validateFour"
+                                aria-expanded="true" aria-controls="validateFour">
+                                Jarque-Bera (JB) Statistic
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="validateFour" class="collapse" aria-labelledby="validate" data-parent="#validate">
+                        <div class="card-body">
+                            <p>
+                                Test for skewness and kurtosis
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
             <div class="row">
                 <div class="col">
                     <p class="lead">Limitations and uses</p>
@@ -407,11 +525,11 @@
                 <li>Player performance in sports and training regime hours</li>
             </ul>
             Furthermore, the concepts in SLR are applied to various more complex models. For example, explanation model
-            LIME
             uses a local linear model in an attempt to explain more complex machine learning results. A feed forward
             neural network
             with 1 bias node and 1 weight node is essentially a SLR model given squared errors and the identity
             activation function.
+            The SLR model is also a special case of a larger class of linear models, called "Generalized Linear Models", or GLMs.
             </p>
         </div>
 </body>

@@ -1,0 +1,36 @@
+/*
+html body {
+    background-color: #b0d6eb;
+}
+*/
+
+
+html body {
+    background: linear-gradient(to bottom, #eeeeee, #3f3f3f) !important;
+    
+}
+
+/*
+nav.navbar {
+    background: #374785 !important;
+}
+
+
+.jumbotron {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #F7F9FB !important;
+}
+
+.card-body {
+    background-color: #FEFFFF !important;   
+}
+
+.btn-success {
+    background-color: #479761 !important;
+}
+
+.btn-primary {
+    background-color: #374785 !important;
+}
+*/
+               
