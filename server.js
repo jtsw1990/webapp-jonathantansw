@@ -6,11 +6,15 @@ const path = require("path");
 const express = require("express");
 const port = process.env.PORT;
 const app = express();
+const favicon = require('serve-favicon');
 
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+
+// middleware for serving favicon
+app.use(favicon(path.join(__dirname, "public", "img", "favicon.ico")));
 
 app.listen(port, () => { 
     console.log(`Listening on port ${port}`);
@@ -44,6 +48,13 @@ app.get("/articles/linear_regression", (req, res) => {
 
 app.get("/articles/feature_engineering", (req, res) => {
     res.render("pages/feature_engineering", {
+        currentPage: req.originalUrl
+    });
+})
+
+
+app.get("/projects", (req, res) => {
+    res.render("projects", {
         currentPage: req.originalUrl
     });
 })

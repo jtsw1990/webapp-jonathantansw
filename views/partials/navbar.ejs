@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">My Website</a>
+    <a class="navbar-brand" href="/"><img src="/img/avatar.png" style="height: 35px; width: 35px;"> <b>Jonathan.T</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,15 @@
                     <% } else { %>
                     "nav-link" 
                     <% } %>
-                    href="/articles">Articles & Projects</a>
+                    href="/articles">Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class=<% if (currentPage.includes('project')) { %>
+                    "nav-link active"
+                    <% } else { %>
+                    "nav-link" 
+                    <% } %>
+                    href="/projects">Projects</a>
             </li>
             <li class="nav-item">
                 <a class=<% if (currentPage.includes('videos')) { %>
@@ -39,12 +47,12 @@
                     href="/about">About</a>
             </li>
             <li class="nav-item">
-                <a class=<% if (currentPage.includes('services')) { %>
+                <a class=<% if (currentPage.includes('resources')) { %>
                     "nav-link active"
                     <% } else { %>
                     "nav-link" 
                     <% } %>
-                    href="#">Services</a>
+                    href="#">Learning Resources</a>
             </li>
         </ul>
     </div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head"); %>
+</head>
+
+<body>
+    <%- include("partials/navbar"); %>
+
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-sm-6">
+                    <%- include("partials/project_titlecard", { title: "Visualizing an artificial neural network"
+                        , photo: "/img/neural_network.gif" ,
+                        description: "Jupyter notebook interactive widgets to tweak and visualize neural network decision boundaries."
+                        ,
+                        link: "https://github.com/jtsw1990/neural_network_article",
+                        preview_flag: "true",
+                        preview_link: "https://hub.gke2.mybinder.org/user/jtsw1990-neural_network_article-86cvtdqf/notebooks/neural_network_article.ipynb"
+                        }); %>
+                </div>
+                <div class="col-sm-6">
+                    <%- include("partials/project_titlecard", { title: "nojutsu.io: digital platform for tutors and students"
+                        , photo: "/img/nojutsu.png" ,
+                        description: "Web app built on nodejs and deployed on digital ocean for tutors and students to connect and offer services."
+                        ,
+                        link: "https://github.com/jtsw1990/tutor_website",
+                        preview_flag: "true",
+                        preview_link: "https://nojutsu.io"
+                        }); %>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-6">
+                    <%- include("partials/project_titlecard", { title: "Grab AI for S.E.A 2019 Competition"
+                        , photo: "/img/grab.jpg" ,
+                        description: "Grab challenged participants in 2019 to come up with solutions on how AI and their data can be used to solve problems in SEA."
+                        ,
+                        link: "https://github.com/jtsw1990/grab-ai-safety",
+                        preview_flag: "false",
+                        preview_link: "#"
+                        }); %>
+                </div>
+            </div>
+        </div>
+        <%- include("partials/footer"); %>
+</body>
+
+</html>
