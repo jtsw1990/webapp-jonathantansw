@@ -11,9 +11,14 @@ nav.navbar {
 }
 */
 
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
 .jumbotron {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(255, 255, 255, 0.6) !important;
+    background-color: rgb(255, 255, 255, 0.85) !important;
 }
 
 .vanta-canvas {
@@ -22,7 +27,7 @@ nav.navbar {
   }
 
 .card {
-    opacity: 0.8 !important;
+    opacity: 0.85 !important;
 }
 
 
@@ -35,9 +40,9 @@ nav.navbar {
 .btn-success {
     background-color: #479761 !important;
 }
-
-.btn-primary {
-    background-color: #374785 !important;
-}
 */
+.btn-primary {
+    background-color: #123c69 !important;
+}
+
 

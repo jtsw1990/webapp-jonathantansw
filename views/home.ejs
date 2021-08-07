@@ -11,24 +11,91 @@
 
         <div class="container">
             <div class="shadow-lg jumbotron mt-2">
-
                 <div class="row">
-                    <div class="col">
-                        <p class="lead text-center"><b>Welcome to Jonathan.T's page. I enjoy playing around with
+                    <div class="col-sm-6 text-center">
+                        <img src="img/avatar_bust.png">
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="lead text-center">
+                            <b>Welcome to Jonathan.T's page. I enjoy playing around with
                                 data,
                                 math and statistics.
-                                I am currently working as a data scientist for <a href="https://www.nib.com.au/">nib</a>
-                                based in Sydney, Australia.</p></b>
+                                I am currently working in the actuarial team as a data scientist at <a
+                                    href="https://www.nib.com.au/">nib</a>
+                                based in Sydney, Australia.
+                            </b>
+                        </p>
+                        <div class="row mt-5">
+                            <div class="col text-center">
+                                <a href="https://github.com/jtsw1990" target="_blank"><img src="/img/github.png"
+                                        class="mr-2"></a>
+                                <a href="https://www.linkedin.com/in/jonathan-tan-33a8169b/" target="_blank"><img
+                                        src="/img/linkedin.png" class="mr-2"></a>
+                                <a href="https://www.instagram.com/jtsw1990/" target="_blank"><img
+                                        src="/img/instagram.png" class="mr-2"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="shadow-lg jumbotron mt-2">
                 <div class="row">
-                    <div class="col text-center">
-                        <a href="https://github.com/jtsw1990" target="_blank"><img src="/img/github.png"
-                                class="mr-2"></a>
-                        <a href="https://www.linkedin.com/in/jonathan-tan-33a8169b/" target="_blank"><img
-                                src="/img/linkedin.png" class="mr-2"></a>
-                        <a href="https://www.instagram.com/jtsw1990/" target="_blank"><img src="/img/instagram.png"
-                                class="mr-2"></a>
+                    <div class="col-sm-4 text-center">
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/article.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h3>Articles</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>I write articles for a range of topics from coding, to data science and
+                                    statistics. These act
+                                    as an interactive repository for me to reference in the future as well as a way
+                                    to share my
+                                    journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/project.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h3>Projects</h3>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Projects from web development to data visualization and competition submissions.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/video.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h3>Videos</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>In my free time I make funny videos on data science and tech.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,7 +117,8 @@
                                 variations of
                                 certain features
                                 to our dataset in the hopes of a "better prediction"?
-                                The plot shows a very simple example of a 9-point dataset. Say we wanted to model a
+                                The plot shows a very simple example of a 9-point dataset. Say we wanted to
+                                model a
                                 straight line to separate/ classify the red and blue points.
                                 Without bending the line, this would be impossible. What happens when we add an
                                 extra
@@ -60,7 +128,8 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-secondary btn-sm" id="add_feature">Add x<sup>2</sup> feature</a>
+                                <a class="btn btn-secondary btn-sm" id="add_feature">Add x<sup>2</sup>
+                                    feature</a>
                                 <a class="btn btn-secondary btn-sm" id="remove_feature">Remove x<sup>2</sup>
                                     feature</a>
                             </div>
@@ -90,13 +159,16 @@
                         <hr class="my-3">
                         <div class="row">
                             <div class="col">
-                                The Simple Linear Regressor is the OG machine learning algorithm and is constrained
+                                The Simple Linear Regressor is the OG machine learning algorithm and is
+                                constrained
                                 by a
-                                line. It uses the Least Squares method in order to calculated the "best-fit line" in
+                                line. It uses the Least Squares method in order to calculated the "best-fit
+                                line" in
                                 a
                                 given dataset. Try out the widget
                                 to see how close
-                                you can get to the best fit line by manually tweaking the parameters and read the
+                                you can get to the best fit line by manually tweaking the parameters and read
+                                the
                                 full
                                 article to learn more about Simple Linear Regression.
                             </div>
@@ -136,10 +208,6 @@
                         <canvas id="leastSquaresWidget" width="200" height="200"></canvas>
                     </div>
                 </div>
-            </div>
-            <div class="shadow-lg jumbotron mt-2">
-                <h3 class="display-4">Content Statistics</h3>
-                <hr class="my-3">
             </div>
         </div>
         <%- include("partials/footer"); %>
