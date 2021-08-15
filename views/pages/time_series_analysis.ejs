@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head"); %>
+</head>
+
+<body>
+    <%- include("../partials/navbar"); %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4">Time Series Analysis</h1>
+                    <hr class="my-4">
+                    <p class="lead">What is TSA</p>
+                    <p>
+                        INSERT SUMMARY
+                    </p>
+                    <p class="lead">What's covered in this repository</p>
+                    <p>
+                    <ul>
+                        <li>What does time series data look like</li>
+                        <li>Theoretical framework behind TS modelling</li>
+                        <ul>
+                            <li>Stationarity</li>
+                            <li>ACF PACF</li>
+                            <li>Seasonaility</li>
+                        </ul>
+                        <li>Data science pipeline in TS analysis</li>
+                        <ul>
+                            <li>Data processing</li>
+                            <li>Exploratory data analysis</li>
+                            <li>Train test split in TS</li>
+                            <li>Model selection</li>
+                            <li>Model validation</li>
+                        </ul>
+                    </ul>
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            Time Series Data
+                        </div>
+                    </div>
+                    Just data where the X-axis is some measure of ordered units. Note that though the name specifies time, this may not always be the case
+                    for a peice of analysis to be considered as time series. For example:
+                    INSERT EXAMPLE HERE
+
+                    This does not mean that no explanatory variables are allowed in time series. However, it may be the case where those variables must first 
+                    be forecasted before being an input into the main time series model. 
+        
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
