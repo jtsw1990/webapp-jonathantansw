@@ -16,40 +16,88 @@
                     <p class="lead">What is feature engineering</p>
                     <p>
                         INSERT PIPELINE FLOWCHART HERE
-                        Feature engineering sits within the data processing step in the pipeline, which is arguably one of the less exciting steps.
+                        Feature engineering sits within the data processing step in the pipeline, which is arguably one
+                        of the less exciting steps.
                     </p>
                     <p class="lead">Why do feature engineering</p>
                     <p>
-               
-                        Though at this point, we've theoretically gotten the data into a usable state, where (for example):
-                        <ul>
-                            <li>Missing values have been imputed</li>
-                            <li>Duplicated values have been removed</li>
-                            <li>Column formats have been configured correctly</li>
-                            <li>Aligned naming conventions and typos</li>
-                            <li>Analyzed and removed outliers</li>
-                            <li>and many others...</li>
-                        </ul>
 
-                        Our dataset may not be in the optimal condition for the modelling, but what does this mean?
-                        Explore graphing bowl
-                        WIDGET here, maybe add the polar coords one?
+                        Though at this point, we've theoretically gotten the data into a usable state, where (for
+                        example):
+                    <ul>
+                        <li>Missing values have been imputed</li>
+                        <li>Duplicated values have been removed</li>
+                        <li>Column formats have been configured correctly</li>
+                        <li>Aligned naming conventions and typos</li>
+                        <li>Analyzed and removed outliers</li>
+                        <li>and many others...</li>
+                    </ul>
 
-                        Note that in reality, one would not be able to easily visualize the feature set's relationship with the response as most
-                        datasets span more than 2 features, or in otherwords span more than 3-dimensions, which would be rather troublesome to graph meaningfully.
+                    Our dataset may not be in the optimal condition for the modelling, but what does this mean?
+                    Explore graphing bowl
+                    WIDGET here, maybe add the polar coords one?
 
-                        In essence, we're trying to stretch, twist, rotate and transform our dataset into a form that makes it easier to fit whatever kind of line we're trying
-                        to impose on it.
+                    Note that in reality, one would not be able to easily visualize the feature set's relationship with
+                    the response as most
+                    datasets span more than 2 features, or in otherwords span more than 3-dimensions, which would be
+                    rather troublesome to graph meaningfully.
+
+                    In essence, we're trying to stretch, twist, rotate and transform our dataset into a form that makes
+                    it easier to fit whatever kind of "line" we're trying
+                    to impose on it.
                     </p>
-                    <p class="lead">How to do feature engineering</p>
-                    
+                    <p class="lead">Feature Engineering Techniques</p>
 
-                    Scaling: Log, minmax, standard
-                    Encoding categorical
-                    Text 
-                    Binning
-                    Aggregating
-                    Numerical extractions
+                    <div class="row">
+                        <div class="col">
+                            Scaling
+                        </div>
+                    </div>
+                    <p>
+                        Scaling of data is always a good habit in general. However, one must understand why we scale and
+                        how to choose between the different
+                        scaling methods to get the best performance out of a selected model. In very simple terms,
+                        we do scaling because of 2 main reasons.
+                        <li>We do not want
+                            a change in the value of a feature to impact model results drastically just because of its
+                            large magnitude</li>
+                        <li>We want our features to follow some kind of distribution</li>
+
+                        INSERT EXAMPLE HERE??
+                        We essentially need to scale data for algorithms that require any calculation of distance within its steps.
+
+                        A machine learning algorithm does not understand the concept of units of measure when trying to
+                        learn. What this means is that a value of 10 kilograms means exactly the same thing numerically as 10 cents when put into 
+                        the same dataframe before training. Now, imagine our model is in the midst of training, and it is now at the step of
+                        calculating the error between a predicted 9c and the 10c in the response caused by a change of weight from 9kg to 10kg.
+                        So we can obviously infer that (keeping all else constant), a change in X of 1 causes a change in Y of 1.
+                        Now, if we had our initial weights in grams instead of kilograms, this would drastically change the statement we are making.
+                        We'd be saying now that an increase in X of 1000, causes an increase in Y of 1. If we were to change X by 1 now, it would seem
+                        alot less effective than it is in the first setting wouldn't it? However, we as humans know that this is not the case and 
+                        we can attempt to communicate this through the scaling of features in our dataset.
+
+                        
+
+
+                        Neural Networks and convergence with scaling.
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            Variable Encoding
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Binning
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Higher order features + interactions
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
