@@ -84,6 +84,28 @@ $("#intercept, #slope").on("change", () => {
         return (num - updatedValues[idx]) ** 2;
     })
     var sumSquaredResiduals = squaredResiduals.reduce(function (a, b) { return a + b; }, 0);
+    // Update fitted values in the article table
+    $("#fx1").html(Math.round(updatedValues[0] * 100) / 100);
+    $("#fx2").html(Math.round(updatedValues[1] * 100) / 100);
+    $("#fx3").html(Math.round(updatedValues[2] * 100) / 100);
+    $("#fx4").html(Math.round(updatedValues[3] * 100) / 100);
+    $("#fx5").html(Math.round(updatedValues[4] * 100) / 100);
+    $("#fx6").html(Math.round(updatedValues[5] * 100) / 100);
+    $("#fx7").html(Math.round(updatedValues[6] * 100) / 100);
+    $("#fx8").html(Math.round(updatedValues[7] * 100) / 100);
+    $("#fx9").html(Math.round(updatedValues[8] * 100) / 100);
+    $("#fx10").html(Math.round(updatedValues[9] * 100) / 100);
+    // Update squared residuals in the article table
+    $("#sr1").html(Math.round(squaredResiduals[0] * 100) / 100);
+    $("#sr2").html(Math.round(squaredResiduals[1] * 100) / 100);
+    $("#sr3").html(Math.round(squaredResiduals[2] * 100) / 100);
+    $("#sr4").html(Math.round(squaredResiduals[3] * 100) / 100);
+    $("#sr5").html(Math.round(squaredResiduals[4] * 100) / 100);
+    $("#sr6").html(Math.round(squaredResiduals[5] * 100) / 100);
+    $("#sr7").html(Math.round(squaredResiduals[6] * 100) / 100);
+    $("#sr8").html(Math.round(squaredResiduals[7] * 100) / 100);
+    $("#sr9").html(Math.round(squaredResiduals[8] * 100) / 100);
+    $("#sr10").html(Math.round(squaredResiduals[9] * 100) / 100);  
     // Update the error term in the DOM
     // Rounded to 2dp
     $("#sumSquaredResiduals").html(Math.round(sumSquaredResiduals * 100) / 100);

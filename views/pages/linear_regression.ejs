@@ -281,6 +281,54 @@
                     </div>
                 </div>
             </div>
+            <div class="accordion" id="leastSquaresProofMatrix">
+                <div class="card">
+                    <div class="card-header" id="headingLSM">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseLSM" aria-expanded="true" aria-controls="headingLSM">
+                                Least Squares mathematical derivation (Matrix Notation)
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseLSM" class="collapse" aria-labelledby="headingLSM"
+                        data-parent="#leastSquaresProofMatrix">
+                        <div class="card-body">
+                            Given the hypothesis:
+
+                            $${ f_{\theta}(x) = \theta_{0}x_{0} + \theta_{1}x_{1} + ... + \theta_{n}x_{n} }$$
+
+                            The function we are trying to minimize is:
+
+                            $${ K(\theta) = \frac{1}{2m}\Sigma (f_{\theta}(x_i) - y_{i})^2 }$$
+
+                            This is basically the sum of squared errors. The extra term in front is to make it more mathematically tractable.
+                            Minimizing a constant multiplied by a function gives the same extrema. This can be rewritten as:
+
+                            $${ f_{\theta}(x) = \theta^Tx = X\theta }$$
+
+                            $${ K(\theta) = \frac{1}{2m}(X\theta - y)^T(X\theta - y) }$$
+
+                            $${ K(\theta) = ((X\theta)^T - y^T)(X\theta - y) }$$
+
+                            $${ K(\theta) = (X\theta)^T X\theta - (X\theta)^Ty - y^T(X\theta) + y^Ty }$$
+
+                            $${ K(\theta) = \theta^T X^T X\theta - 2(X\theta)^Ty + y^Ty }$$
+
+                            Which is the equation we are trying to minimize. We take the first order condition:
+
+                            $${ \frac{\partial K}{\partial \theta} = 2X^TX\theta - 2X^Ty = 0 }$$
+
+                            $${ X^TX\theta = X^Ty }$$
+
+                            Assuming \(X^TX\) is invertible (for sklearn a pseudo inverse is calculated), we get:
+
+                            $${ \theta = (X^TX)^{-1}X^Ty }$$
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <p>
                 By applying the concepts of optimizing the squared errors and some algebraic manipulation, we end up
                 with the formulae:
@@ -310,70 +358,70 @@
                             <tr>
                                 <th scope="col">\(x_{i}\)</th>
                                 <th scope="col">\(y_{i}\)</th>
-                                <th scope="col">best-fit line</th>
-                                <th scope="col">selected line</th>
+                                <th scope="col">\(f(x_i)\)</th>
+                                <th scope="col">\(\epsilon^2\)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>0</td>
                                 <td>0</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx1"></td>
+                                <td id="sr1"></td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td>2</td>
-                                <td>@fat</td>
-                                <td>@mdo</td>
+                                <td id="fx2"></td>
+                                <td id="sr2"></td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>1</td>
-                                <td>@twitter</td>
-                                <td>@mdo</td>
+                                <td id="fx3"></td>
+                                <td id="sr3"></td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>4</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx4"></td>
+                                <td id="sr4"></td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>2</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx5"></td>
+                                <td id="sr5"></td>
                             </tr>
                             <tr>
                                 <td>5</td>
                                 <td>4</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx6"></td>
+                                <td id="sr6"></td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>2</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx7"></td>
+                                <td id="sr7"></td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>7</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx8"></td>
+                                <td id="sr8"></td>
                             </tr>
                             <tr>
                                 <td>8</td>
                                 <td>5</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx9"></td>
+                                <td id="sr9"></td>
                             </tr>
                             <tr>
                                 <td>9</td>
                                 <td>6</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td id="fx10"></td>
+                                <td id="sr10"></td>
                             </tr>
                         </tbody>
                     </table>

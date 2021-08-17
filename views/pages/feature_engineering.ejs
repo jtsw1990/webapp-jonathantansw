@@ -64,28 +64,75 @@
                         <li>We want our features to follow some kind of distribution</li>
 
                         INSERT EXAMPLE HERE??
-                        We essentially need to scale data for algorithms that require any calculation of distance within its steps.
+                        We essentially need to scale data for algorithms that require any calculation of distance within
+                        its steps.
 
                         A machine learning algorithm does not understand the concept of units of measure when trying to
-                        learn. What this means is that a value of 10 kilograms means exactly the same thing numerically as 10 cents when put into 
-                        the same dataframe before training. Now, imagine our model is in the midst of training, and it is now at the step of
-                        calculating the error between a predicted 9c and the 10c in the response caused by a change of weight from 9kg to 10kg.
-                        So we can obviously infer that (keeping all else constant), a change in X of 1 causes a change in Y of 1.
-                        Now, if we had our initial weights in grams instead of kilograms, this would drastically change the statement we are making.
-                        We'd be saying now that an increase in X of 1000, causes an increase in Y of 1. If we were to change X by 1 now, it would seem
-                        alot less effective than it is in the first setting wouldn't it? However, we as humans know that this is not the case and 
-                        we can attempt to communicate this through the scaling of features in our dataset.
+                        learn. What this means is that a value of 10 kilograms means exactly the same thing numerically
+                        as 10 cents when put into
+                        the same dataframe before training. Now, imagine our model is in the midst of training, and it
+                        is now at the step of
+                        calculating the error between a predicted 9c and the 10c in the response caused by a change of
+                        weight from 9kg to 10kg.
+                        So we can obviously infer that (keeping all else constant), a change in X of 1 causes a change
+                        in Y of 1.
+                        Now, if we had our initial weights in grams instead of kilograms, this would drastically change
+                        the statement we are making.
+                        We'd be saying now that an increase in X of 1000, causes an increase in Y of 1. If we were to
+                        change X by 1 now, it would seem
+                        alot less effective than it is in the first setting wouldn't it? However, we as humans know that
+                        this is not the case and
+                        we can attempt to communicate this through the scaling of features in our dataset. Also, which is larger,
+                        10kg or 9c? The more important question is who cares? Scale the data and that problem goes away. We ultimately
+                        want to get to a point where we can say statements like "feature \(X_1\) is more important than \(X_2\)", 
+                        and having it make some sense.
 
-                        
+
+                        Algorithms that rely on scaling
+                    <ul>
+                        <li>K-NN and K-Means for normalizing euclidean distance calculations</li>
+                        <li>PCA for normalizing variance calculations</li>
+                        <li>Neural networks for faster convergence</li>
+                        <li>Regularization</li>
+                    </ul>
+
+                    Algorithms that do not rely on scaling, rely on rules
+                    <ul>
+                        <li>Tree-based models</li>
+                        <li>Linear regression using the normal equation</li>
+                    </ul>
+
+                    Algorithms that have built-in functionality to handle scaling
+                    <ul>
+                        <li>Naive Bayes (go through maths briefly)</li>
+                        <li>Linear Discriminant Analysis</li>
+                    </ul>
+
+                    Popular Scaling Techniques
+                    <ul>
+                        <li>Standard Scaler</li>
+                        <li>Min Mix Scaler</li>
+                        <li>Log Scaler</li>
+                    </ul>
+
+                    Other Scaling Techniques
+                    <ul>
+                        <li>Max Absoulate Scaler</li>
+                        <li>Robust Scaler</li>
+                        <li>Quantile Transformer</li>
+                        <li>Unit Vector Scaler</li>
+                    </ul>
+
+                    INSERT WIDGET ON SCALERS HERE
 
 
-                        Neural Networks and convergence with scaling.
                     </p>
                     <div class="row">
                         <div class="col">
                             Variable Encoding
                         </div>
                     </div>
+                    Machine learning models can only ingest numerical values.
                     <div class="row">
                         <div class="col">
                             Binning
