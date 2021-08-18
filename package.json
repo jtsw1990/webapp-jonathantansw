@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jtsw1990/my-website#readme",
   "dependencies": {
     "chart.js": "^3.4.1",
+    "csv-parse": "^4.16.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",

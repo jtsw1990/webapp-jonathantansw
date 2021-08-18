@@ -82,9 +82,12 @@
                         change X by 1 now, it would seem
                         alot less effective than it is in the first setting wouldn't it? However, we as humans know that
                         this is not the case and
-                        we can attempt to communicate this through the scaling of features in our dataset. Also, which is larger,
-                        10kg or 9c? The more important question is who cares? Scale the data and that problem goes away. We ultimately
-                        want to get to a point where we can say statements like "feature \(X_1\) is more important than \(X_2\)", 
+                        we can attempt to communicate this through the scaling of features in our dataset. Also, which
+                        is larger,
+                        10kg or 9c? The more important question is who cares? Scale the data and that problem goes away.
+                        We ultimately
+                        want to get to a point where we can say statements like "feature \(X_1\) is more important than
+                        \(X_2\)",
                         and having it make some sense.
 
 
@@ -143,11 +146,28 @@
                             Higher order features + interactions
                         </div>
                     </div>
-
+                    <p>
+                        Creating high-order features or multiplying feature values together may seem unintuitive or make
+                        little sense, but this is best explained with an interactive widget.
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-primary btn-lg" id="add_x1s">Add \(x1^2\)</button>
+                            <button class="btn btn-primary btn-lg" id="add_x2s">Add \(x2^2\)</button>
+                            <button class="btn btn-primary btn-lg" id="add_x1x2">Add \(xy\)</button>  
+                            <button class="btn btn-danger btn-lg" id="reset">Reset</button>      
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="featurePlot"></div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
 </body>
+<script src="/js/feature_engineer.js"></script>
 
 </html>
