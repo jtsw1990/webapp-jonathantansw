@@ -148,12 +148,15 @@
                     </div>
                     <p>
                         Creating high-order features or multiplying feature values together may seem unintuitive or make
-                        little sense, but this is best explained with an interactive widget.
+                        little sense, but this is best explained with an interactive widget. If we wanted to create a model to separate the orange and blue points,
+                        sure we can use a more complex non-linear model, but before jumping ahead, let's see what happens to the shape of our data when we try 
+                        to add a 3rd feature column to it. Try the different options and see which techniques end up being useful to allow us to separate the 
+                        2 categories even with a linear model.
                     </p>
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-primary btn-lg" id="add_x1s">Add \(x1^2\)</button>
-                            <button class="btn btn-primary btn-lg" id="add_x2s">Add \(x2^2\)</button>
+                            <button class="btn btn-primary btn-lg" id="add_x1s">Add \(x_1^2\)</button>
+                            <button class="btn btn-primary btn-lg" id="add_x2s">Add \(x_2^2\)</button>
                             <button class="btn btn-primary btn-lg" id="add_x1x2">Add \(xy\)</button>  
                             <button class="btn btn-danger btn-lg" id="reset">Reset</button>      
                         </div>
