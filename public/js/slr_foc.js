@@ -7,13 +7,11 @@ const foc_sample_y_prime = foc_sample_x.map(x => 2 * x)
 var firstOrderWidgetOne = document.getElementById("firstOrderWidgetOne");
 var firstOrderWidgetTwo = document.getElementById("firstOrderWidgetTwo");
 
-
-
 let focChartOne = new Chart(firstOrderWidgetOne, {
     data: {
         datasets: [{
             type: "scatter",
-            label: "f(x)",
+            label: "f(x) = x^2",
             data: foc_sample_y
             , backgroundColor: "rgb(255, 99, 132)"
         }],
@@ -29,7 +27,7 @@ let focChartTwo = new Chart(firstOrderWidgetTwo, {
     data: {
         datasets: [{
             type: "scatter",
-            label: "f'(x)",
+            label: "f'(x) = 2x",
             data: foc_sample_y_prime
             , backgroundColor: "rgb(255, 99, 132)"
         }],
@@ -38,14 +36,4 @@ let focChartTwo = new Chart(firstOrderWidgetTwo, {
     options: {
         bezierCurve : true
     }
-});
-
-$("#foc_x").on("change", () => {
-    xValue  = parseFloat(document.getElementById("foc_x").value);
-    focChartTwoidx = focChartTwo.data.datasets[0].data.findIndex(e => e == xValue);
-    focChartTwo.data.datasets[0].data[focChartTwoidx].pointRadius =  2;
-    //console.log(xValue)
-    //console.log(focChartTwo.data.datasets[0].data)
-    //console.log(focChartTwo.data.datasets[0].data[focChartTwoidx])
-    focChartTwo.update()
 });

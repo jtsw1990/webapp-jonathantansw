@@ -9,7 +9,7 @@
     <%- include("../partials/navbar"); %>
 
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col">
                     <h1 class="display-4">Simple Linear Regression: The Repository</h1>
                 </div>
@@ -53,7 +53,7 @@
                 can choose
                 to skip some of the refresher content.
             </p>
-            <div class="accordion" id="straightLine">
+            <div class="shadow-sm accordion mb-2 mt-2" id="straightLine">
                 <div class="card">
                     <div class="card-header" id="straightLine">
                         <h2 class="mb-0">
@@ -114,7 +114,7 @@
             values for these 2 terms that creates
             the "best" line to approximate our data, or the \(x_i\) and \(y_i\) values. This is done by using the "Least
             Squares Method".
-            <div class="accordion" id="assumptions">
+            <div class="shadow-sm accordion mb-2 mt-2" id="assumptions">
                 <div class="card">
                     <div class="card-header" id="assumptions">
                         <h2 class="mb-0">
@@ -180,7 +180,7 @@
                     title="A class of problems relating to finding a max or min value of a function">optimization</span>
                 problem.
             </p>
-            <div class="accordion" id="widgetOne">
+            <div class="shadow-sm accordion mb-2 mt-2" id="widgetOne">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
@@ -208,16 +208,11 @@
                                 slope to 0, we get:
                                 $${ 2x = 0, x = 0}$$
                                 Which implies that when \(x = 0\), the function \(x^2\) will be at the lowest value.
-                                Have a play around with the widget below and see if the 0 point on the \(f'(x)\) does
+                                Have a look at the plots below and see if the 0 point on the \(f'(x)\) does
                                 indeed
                                 correspond to the lowest point on the \(f(x)\) graph on the left.
                             </p>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="range" class="slider" value="" min="-40" max="38" step="2"
-                                        id="foc_x"><label for="foc_x">\(x\)</label>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-sm-6">
                                     <canvas id="firstOrderWidgetOne" width="200" height="200"></canvas>
@@ -236,7 +231,7 @@
                 find values \(\beta_0\) and \(\beta_1\) that returns us the least amount of:
                 $${ (y_{predicted} - y_{actual})^2 }$$
             </p>
-            <div class="accordion" id="leastSquaresProof">
+            <div class="shadow-sm accordion mb-2 mt-2" id="leastSquaresProof">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
@@ -281,12 +276,12 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion" id="leastSquaresProofMatrix">
+            <div class="shadow-sm accordion mb-2 mt-2" id="leastSquaresProofMatrix">
                 <div class="card">
                     <div class="card-header" id="headingLSM">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse"
-                                data-target="#collapseLSM" aria-expanded="true" aria-controls="headingLSM">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseLSM"
+                                aria-expanded="true" aria-controls="headingLSM">
                                 Least Squares mathematical derivation (Matrix Notation)
                             </button>
                         </h2>
@@ -302,8 +297,10 @@
 
                             $${ K(\theta) = \frac{1}{2m}\Sigma (f_{\theta}(x_i) - y_{i})^2 }$$
 
-                            This is basically the sum of squared errors. The extra term in front is to make it more mathematically tractable.
-                            Minimizing a constant multiplied by a function gives the same extrema. This can be rewritten as:
+                            This is basically the sum of squared errors. The extra term in front is to make it more
+                            mathematically tractable.
+                            Minimizing a constant multiplied by a function gives the same extrema. This can be rewritten
+                            as:
 
                             $${ f_{\theta}(x) = \theta^Tx = X\theta }$$
 
@@ -460,16 +457,18 @@
                 <li>We can be 95% confident that \(y\) will take values between \(1.5 \pm{} 1.645 *
                     \frac{\sigma}{\sqrt{n}} \)</li>
             </ol>
-    
-                Now that we've understood the main resulting formula and what the \(\beta_0\) and \(\beta_1\)
-                coefficients mean, the SLR output
-                provides us with more pieces of information which we can use to evaluate how "good" of a job our model
-                is actually doing on
-                approximating the data. Note that some of these are more useful and commonly seen in programming libraries than others.
-                Along with the explanations below, there is an included spreadsheet <a href="/assets/slr_output.xlsx" download>here</a> that uses the sample data in example above
-                to reverse engineer all the regression outputs.
+
+            Now that we've understood the main resulting formula and what the \(\beta_0\) and \(\beta_1\)
+            coefficients mean, the SLR output
+            provides us with more pieces of information which we can use to evaluate how "good" of a job our model
+            is actually doing on
+            approximating the data. Note that some of these are more useful and commonly seen in programming libraries
+            than others.
+            Along with the explanations below, there is an included spreadsheet <a href="/assets/slr_output.xlsx"
+                download>here</a> that uses the sample data in example above
+            to reverse engineer all the regression outputs.
             </p>
-            <div class="accordion" id="validate">
+            <div class="shadow-sm accordion mb-2 mt-2" id="validate">
                 <div class="card">
                     <div class="card-header" id="validate">
                         <h2 class="mb-0">
@@ -493,13 +492,19 @@
                                 related
                                 to the changes in the response. A common benchmark used is a p-value lower than 5% to
                                 deem a term
-                                meaningful.
+                                meaningful. This can be can generally be translated into a statement such as :
+
+                            <blockquote>
+                                Given the assumption that (insert null hypothesis here) and (insert distributional
+                                assumptions here),
+                                the probability of observing the value 1.5 from the model results is (p-value)%.
+                            </blockquote>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="accordion" id="validate">
+            <div class="shadow-sm accordion mb-2 mt-2" id="validate">
                 <div class="card">
                     <div class="card-header" id="validate">
                         <h2 class="mb-0">
@@ -512,38 +517,93 @@
                     <div id="validateTwo" class="collapse" aria-labelledby="validate" data-parent="#validate">
                         <div class="card-body">
                             <p>
-                                \(R^2\) as it is more commonly known, is generally a measure of how well the SLR model fits the data.
-                                More specifically, it is a statistical measure that tells us the proportion of the variance for a
+                                \(R^2\) as it is more commonly known, is generally a measure of how well the SLR model
+                                fits the data.
+                                More specifically, it is a statistical measure that tells us the proportion of the
+                                variance for a
                                 response that is explained
                                 by the term in the SLR, and is defined by the following formula:
                                 $${ R^2 = 1 - \frac{SS_{regression}}{SS_{total}} }$$
+
+                                Some things to note:
+                            <ul>
+                                <li>Taking this square root of this value gives us the linear correlation measure,
+                                    bounded by -1 and 1</li>
+                                <li>Excel's \({R^2}_{adj}\) just adjusts the value for the number of terms in the model.
+                                    This is a guard to discourage addition of useless features into the model</li>
+                                <li>This is calculated by: \({R^2}_{adj} = 1 - [\frac{(1-R^2)(n - 1)}{(n - k - 1)}]\)
+                                    and penalizes the user for adding in unnecessary features where \(R^2\) will not
+                                </li>
+                                <li>While \(R^2\) does give us information on how well the model is fitting the data
+                                    linearly, it may not always be the most appropriate in justifying the model selected
+                                </li>
+                            </ul>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="accordion" id="validate">
+            <div class="shadow-sm accordion mb-2 mt-2" id="validate">
                 <div class="card">
                     <div class="card-header" id="validate">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#validateThree"
-                                aria-expanded="true" aria-controls="validateThree">
-                                Residual Plots
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#validateThree" aria-expanded="true" aria-controls="validateThree">
+                                Residual Plots (QQ-Plots)
                             </button>
                         </h2>
                     </div>
                     <div id="validateThree" class="collapse" aria-labelledby="validate" data-parent="#validate">
                         <div class="card-body">
+                            <p>
+                                The QQ-Plot basically plots the <span class="badge badge-primary">quantiles</span> of 2
+                                different distrubtions against each other.
+                                This is very useful in statistical analyses where we want visual evidence that a
+                                particular result follows a certain distribution.
+                                Refer to the image from <a
+                                    href="http://sherrytowers.com/2013/08/29/aml-610-fall-2013-module-ii-review-of-probability-distributions/qqplot_examples/"
+                                    target="_blank">sherry towers</a> below for an overview.
+                            <div class="row">
+                                <div class="col">
+                                    <img src="/img/qqplot_examples.jpg" width="100%">
+                                </div>
+                            </div>
+                            Some important things to note:
+                            <ul>
+                                <li>If data follows the distribution perfectly, then QQ-plot will result in a straight
+                                    line, with the green line signifying that the theoretical quantiles exactly equals
+                                    what is seen in the data</li>
+                                <li>For a normal distribution, we're basically plotting sorted data against the Z-scores
+                                    given the rank of the data</li>
+                                <li>These Z-scores are calculated with the following statement. "Solve for \(Z\) in
+                                    \(P(Z <= p)\), given that \(Z\sim N(0, 1)\) and p is the percentile of the
+                                        particular data point."</li>
+                                <li>Now say that p is 5%, we know that the line should have a vertical value of ~-1.645.
+                                    If our points fall below that as seen in the 2nd row of pictures, what we're saying
+                                    is that 5% of the data falls below -1.645 in a standard normal distribution, but in
+                                    our dataset, 5% of data falls below e.g -20 instead. Which gives us an idea that
+                                    there are more than 5% of points that are lesser than -1.645, meaning either our
+                                    data is left skewed or more peaked than a normal distribution</li>
+                            </ul>
+                            While we can generally use any theoretical distribution to be compared against in the
+                            x-axis. The reason a normal distribution is a popular one stems from the fact that
+                            many statistical and models assume that errors are normally distributed, and having evidence
+                            that our modelled errors are indeed normally distributed would support the fact
+                            that the selected model works well enough in trying to explain any trends and biases in our
+                            dataset.
+                            For an example of how to create QQ-plots from scratch in excel, refer to this <a
+                                href="https://www.statology.org/q-q-plot-excel/" target="_blank">article</a>.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="accordion" id="validate">
+            <div class="shadow-sm accordion mb-2 mt-2" id="validate">
                 <div class="card">
                     <div class="card-header" id="validate">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#validateFour"
-                                aria-expanded="true" aria-controls="validateFour">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#validateFour" aria-expanded="true" aria-controls="validateFour">
                                 Jarque-Bera (JB) Statistic
                             </button>
                         </h2>
@@ -551,13 +611,31 @@
                     <div id="validateFour" class="collapse" aria-labelledby="validate" data-parent="#validate">
                         <div class="card-body">
                             <p>
-                                Test for skewness and kurtosis
+                                The JB-test is defined as:
+
+                                $${ JB = \frac{n}{6}(S^2 + \frac{1}{4}(K-3)^2) }$$
+
+                                where \(n\) is the number of samples, \(S\) is the measure of skewness in the sample,
+                                and \(K\) is the measure of kurtisos in the sample:
+
+                                $${ S = \frac{\mu_3}{\sigma^3} }$$
+                                $${ K = \frac{\mu_4}{\sigma^4} }$$
+
+                                This is a goodness-of-fit test to evaluate if a data has the same skewness and kurtosis
+                                as a normal distribution. The test results are non-negative and the larger the value,
+                                the more evidence that the sample data does not have a normal distribution. Given that
+                                the underlying data is normally distributed, this JB statistic asymptotically converges
+                                to a \(\chi^2(2)\), which can then be tested against at differing confidence levels.
+                                However, it is noted that for smaller samples, this approximation is very sensitive and
+                                often
+                                leads to rejecting the null hypothesis (skewness and kurtosis is 0) when it is in fact
+                                true, leading to a large type 1 error rate.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-                
+
             <div class="row">
                 <div class="col">
                     <p class="lead">Limitations and uses</p>
@@ -577,11 +655,12 @@
             neural network
             with 1 bias node and 1 weight node is essentially a SLR model given squared errors and the identity
             activation function.
-            The SLR model is also a special case of a larger class of linear models, called "Generalized Linear Models", or GLMs.
+            The SLR model is also a special case of a larger class of linear models, called "Generalized Linear Models",
+            or GLMs.
             </p>
         </div>
 </body>
 <script src="/js/slr.js"></script>
-<script src="/js/slr_poc.js"></script>
+<script src="/js/slr_foc.js"></script>
 
 </html>

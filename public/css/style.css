@@ -42,7 +42,13 @@ body {
 }
 */
 .btn-primary {
-    background-color: #123c69 !important;
+    background-color: #35643d !important;
+    border-color: #35643d !important;
 }
+
+.accordion {
+    background-color: #fff385 !important;
+}
+
 
 
