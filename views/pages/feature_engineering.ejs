@@ -14,13 +14,37 @@
                     <h1 class="display-4">Feature Engineering Explained</h1>
                     <hr class="my-4">
                     <p class="lead">What is feature engineering</p>
+                    <img src="/img/ensemble_pipeline.png" alt="data science pipeline">
                     <p>
-                        INSERT PIPELINE FLOWCHART HERE
-                        Feature engineering sits within the data processing step in the pipeline, which is arguably one
-                        of the less exciting steps.
+                        Feature engineering involves preparing a given dataset such that it is suitable to be fed into a
+                        machine learning model.
+                        While there are many variations of the data science pipeline depending on the requirements,
+                        feature engineering usually sits
+                        between the exploratory data analysis step and the modelling step.
+
+                        Ideally, the processed data has been sufficiently analyzed to give the analyst an idea of the
+                        transformations to be applied such that:
+                    <ul>
+                        <li>The machine learning model is able to ingest the resulting dataset</li>
+                        <li>The model fits the dataset reasonably well</li>
+                        <li>The resulting dataset remains representative of real world phenomena</li>
+                    </ul>
+
+                    The word ideally is used here as in reality, there is a significant amount of trial and error
+                    involved in the process, and the analyst will find
+                    himself/herself iterative through the processing, feature engineering and modelling steps within the
+                    pipeline as shown in the workflow above.
                     </p>
                     <p class="lead">Why do feature engineering</p>
                     <p>
+                    The main reasons ultimately lead back to the "why" of feature engineering and can be summarized as follows. 
+                    The first 2 are fairly straight forward, and usually requires a more fixed set of steps to achieve.
+                    The last one however, is a little more involved and where most of the discussion will revolve around.
+                    
+                    To get data into the "right" format
+                    To ensure that the data is representative of real world phenomena
+                    To "help" the model perform better
+                    
 
                         Though at this point, we've theoretically gotten the data into a usable state, where (for
                         example):
@@ -148,17 +172,20 @@
                     </div>
                     <p>
                         Creating high-order features or multiplying feature values together may seem unintuitive or make
-                        little sense, but this is best explained with an interactive widget. If we wanted to create a model to separate the orange and blue points,
-                        sure we can use a more complex non-linear model, but before jumping ahead, let's see what happens to the shape of our data when we try 
-                        to add a 3rd feature column to it. Try the different options and see which techniques end up being useful to allow us to separate the 
+                        little sense, but this is best explained with an interactive widget. If we wanted to create a
+                        model to separate the orange and blue points,
+                        sure we can use a more complex non-linear model, but before jumping ahead, let's see what
+                        happens to the shape of our data when we try
+                        to add a 3rd feature column to it. Try the different options and see which techniques end up
+                        being useful to allow us to separate the
                         2 categories even with a linear model.
                     </p>
                     <div class="row">
                         <div class="col">
                             <button class="btn btn-primary btn-lg" id="add_x1s">Add \(x_1^2\)</button>
                             <button class="btn btn-primary btn-lg" id="add_x2s">Add \(x_2^2\)</button>
-                            <button class="btn btn-primary btn-lg" id="add_x1x2">Add \(xy\)</button>  
-                            <button class="btn btn-danger btn-lg" id="reset">Reset</button>      
+                            <button class="btn btn-primary btn-lg" id="add_x1x2">Add \(xy\)</button>
+                            <button class="btn btn-danger btn-lg" id="reset">Reset</button>
                         </div>
                     </div>
                     <div class="row">
