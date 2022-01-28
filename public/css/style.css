@@ -10,10 +10,14 @@ nav.navbar {
     background: #374785 !important;
 }
 */
+html {
+    height: 100%
+}
 
 body {
     font-family: 'Roboto', sans-serif !important;
     font-family: 'Roboto Condensed', sans-serif !important;
+    min-height: 100% !important;
 }
 
 .jumbotron {
@@ -49,6 +53,8 @@ body {
 .accordion {
     background-color: #fff385 !important;
 }
+
+
 
 
 

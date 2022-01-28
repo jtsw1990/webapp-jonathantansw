@@ -72,3 +72,10 @@ app.get("/videos", (req, res) => {
         currentPage: req.originalUrl
     });
 })
+
+
+app.get("/sitemap", (req, res) => {
+    res.render("sitemap", {
+        currentPage: req.originalUrl
+    });
+})
