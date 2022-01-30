@@ -13,7 +13,6 @@
             <div class="row mt-5">
                 <div class="col">
                     <h1 class="display-4">Interactive learning: The Basics of Simple Linear Regression</h1>
-                    <!-- <%- include("../partials/share_icons"); %> -->
                 </div>
             </div>
             <hr class="my-4">
@@ -22,37 +21,32 @@
                     <p class="lead">Introduction</p>
                 </div>
             </div>
-
             <p>
-                This entry will attempt to cover the basics of simple linear regression (SLR).
-                This includes the mathematics and
-                the main assumptions behind it, as well as how to interpret the results.
+                This entry will attempt to cover the basics of simple linear regression (SLR) and its dependencies.
+                This includes the mathematical derivations, main assumptions and interpretation of the results.
                 What this entry will not cover is the programmatic implementation, as well as the workarounds in
-                implementations for certain mathematical processes in statistical packages like sklearn.
+                implementations for certain mathematical processes in statistical packages like Statsmodels.
                 SLR in a nutshell is a predictive model, and like all other predictive models,
                 its main purpose is to try and:
 
             <ul>
-                <li>Quantify the dependencies between some observed phenomena</li>
+                <li>Quantify the relationships between some observed phenomena</li>
                 <li>Predict their future behavior</li>
             </ul>
 
             </p>
             <p>
                 What separates SLR from other models is that SLR attempts to achieve this with a straight line.
-                It is one of the oldest and simplest <span class="badge badge-primary" data-toggle="tooltip"
-                    data-placement="top"
-                    title="Assumes that the data follows a certain statistical distribution">parametric</span>
-                statistical models (or <span class="badge badge-primary" data-toggle="tooltip" data-placement="top"
-                    title="Models trained on datasets with a dependant variable">supervised</span> machine
+                It is one of the oldest and simplest parametric
+                statistical models (or supervised machine
                 learning
                 algorithms), and forms the basis for many more complex ones.
                 By understanding the inner workings and shortcomings of SLR, one would have a good foundation to
                 expand their knowledge to other machine learning algorithms,
                 as well as apply the concepts learnt in SLR to implement best practices in future modelling
-                exercises. This article is broken up into several distinct sections, and depending on your level, you
-                can choose
-                to skip some of the refresher content.
+                exercises. This article is broken up into several distinct sections, and depending on your familiarity
+                with these components, you
+                can choose to skip accordingly.
             </p>
             <div class="shadow-sm accordion mb-2 mt-2" id="straightLine">
                 <div class="card">
@@ -68,7 +62,7 @@
                         <div class="card-body">
                             <p>
                                 Given that the main feature of SLR is to use a straight line to model phenomena, it
-                                would be sensible to revisit the mathematical definition of a line. 
+                                would be sensible to revisit the mathematical definition of a line.
                                 Recall that a line in a 2-dimensional grid can
                                 be defined algebraically as:
 
@@ -84,6 +78,16 @@
                                 $${ m = \frac{ y_2 - y_1 }{ x_2 - x_1 } }$$
 
                                 Now with these parameters, we can construct and characterize any 2-dimensional line.
+                                We can better visualize what this means by playing around with the graphing widget in <a
+                                    href="https://desmos.com" target="_blank">desmos</a>. Have a play around with the
+                                sliders on the left for different values of m and c, and see how it affects the
+                                resulting line.</p>
+
+                            <div class="row">
+                                <iframe src="https://www.desmos.com/calculator/yadwspm8h1" width="100%"
+                                    height="500px"></iframe>
+                            </div>
+                            <p>
                                 Depending on the context, the interpretation of the slope and gradient will differ.
                             </p>
                         </div>
@@ -97,23 +101,34 @@
                 </div>
             </div>
 
-            The simple linear regression model can be defined as follows:
+            The simple linear regression model is defined as follows:
 
             $${ y_i = \beta_0 + \beta_1 x_i + \epsilon }$$
 
-            We can see that this closely resembles an equation of a straight line, with an extra \(\epsilon\) term. This
-            makes perfect sense
+            We can see that this closely resembles an equation of a straight line, with an extra \(\epsilon\) term. The
+            \(\epsilon\) component is
+            also known as the error term, and represents the inevitable deviations between the actual data and our
+            linear model (it is hardly the case where
+            the straight line perfectly represents what is happening in the real world). Despite the deviations, we can
+            make some useful statements about these errors as a result
+            of using the SLR model which we will explore.
+            The rest of the terms make sense
             since the goal of a SLR model is to model some data with a line in the first place. The \(x_i\) and \(y_i\)
-            terms here represent our datapoints and
-            response values respectively. In simple terms, we can think of \(y_i\) as the result that we want to explain
+            terms here represent our observed datapoints and
+            response values respectively. In simple terms, we can think of \(y_i\) as results that we want to explain,
             and
-            \(x_i\) as the feature that we believe will influence \(y_i\).
-            The \(\beta_0\) and \(\beta_1\) term, which defines the intercept and slope of
-            the line. While we note that these
-            2 terms can take any numerical value and we'd still create a line, what we really want to do is to find the
-            values for these 2 terms that creates
-            the "best" line to approximate our data, or the \(x_i\) and \(y_i\) values. This is done by using the "Least
-            Squares Method".
+            \(x_i\) as the features that we believe will influence \(y_i\).
+            The \(\beta_0\) and \(\beta_1\) terms, respresents the intercept and slope of
+            the line, and their interpretation will change with the context of the data. These 2 terms are also called
+            the parameters of the model,
+            and like before, any SLR model can be defined with different combinations of \(\beta_0\) and \(\beta_1\).
+            While we
+            note that these
+            2 terms can take any real numerical value and we'd still end up with a valid linear model, what we really
+            want to do is to
+            find the values for these 2 parameters such that the resulting
+            line approximates our data the "best". This is done by using the "Least
+            Squares Algorthim".
             <div class="shadow-sm accordion mb-2 mt-2" id="assumptions">
                 <div class="card">
                     <div class="card-header" id="assumptions">
@@ -128,14 +143,15 @@
                         <div class="card-body">
                             <p class="lead">1. Residuals are normally distributed</p>
                             <p>
-                                This assumes that the residuals, defined as \(y_{actual} - y_{modelled}\) follow a
-                                normal distrubtion.
-                                We can validate this assumption visually by plotting <span class="badge badge-primary"
-                                    data-toggle="tooltip" data-placement="top"
-                                    title="Quantile-quantile plots are a type of scatter plot for comparing 2 distributions by plotting their quantiles against each other">
-                                    QQ-Plots</span> or histogram post model fitting, which we will explore in the
+                                This assumes that the residuals, defined as \(y_{actual} - y_{modelled}\) or
+                                \(\epsilon\) are normally distributed.
+                                We can validate this assumption visually by plotting QQ-Plots or histograms post-model
+                                fitting, which we will explore in the
                                 later section. Or for a more numerical method, we can use the Jarque-Bera (JB) test to
-                                check this assumption.
+                                check this assumption. If results from tests show otherwise, this could be evidence that
+                                the SLR model is not sufficiently
+                                explaining the data, and this leads to an unexplained "pattern" in the residuals instead
+                                of random.
                             </p>
                             <p class="lead">2. Variance of residuals are constant</p>
                             <p>
@@ -144,13 +160,17 @@
                                 different values of \(x_i\). This can be validated visually by plotting a scatterplot of
                                 the model predictions and the residual values.
                                 If there is a change of variability between the \(X\) values, we say that the data is
-                                heteroscedastic.
+                                heteroscedastic. When this happens, the model results become less reliable.
+                                Specifically, heteroscedasticity increases the variance of the regression coefficient
+                                estimates, but the regression model does not pick up on this. This makes it much more
+                                likely for a regression model to declare that a term in the model is statistically
+                                significant, when in fact it is not.
                             </p>
                             <p class="lead">3. Residuals are indepdendent of each other</p>
                             <p>
-                                Another way of stating this is that we do not want any autocorrelation between the model
-                                residuals. If we observed some
-                                dependent relationships betwene our residuals, that means that our SLR model is not
+                                It is assumed in the SLR model that the error terms are independent of each other, and
+                                the response. If we observed some
+                                dependent relationships between our residuals, that means that the SLR model is not
                                 capturing/ modelling the correlation between
                                 the \(x_i\) well enough.
                             </p>
@@ -173,11 +193,9 @@
             <p>
                 The idea behind the least squares method, is to find values of \(\beta_0\) and \(\beta_1\), which
                 minimizes the errors between the actual
-                \(x_i\) and \(y_i\) terms observed in the dataset, and the values produced by the linear model. If you
-                are mathematically savvy, you'd have picked up
-                that this translates into an <span class="badge badge-primary" data-toggle="tooltip"
-                    data-placement="top"
-                    title="A class of problems relating to finding a max or min value of a function">optimization</span>
+                \(y_i\) terms observed in the dataset, and the values produced by the linear model \beta_0 + \beta_1 x_i. If the reader
+                happens to be more mathematically savvy, then the reader would have picked up
+                that this translates into an optimization
                 problem.
             </p>
             <div class="shadow-sm accordion mb-2 mt-2" id="widgetOne">
@@ -198,10 +216,8 @@
                                 we want to find the point \(x\) such that \(f(x)\) returns the highest or lowest
                                 possible value. In order to do this, we need to find the point where:
                                 $${ \frac{\partial y}{\partial x} = f'(x) = 0 }$$
-                                Or in other words, we need to find the point in the graph, where the <span
-                                    class="badge badge-primary" data-toggle="tooltip" data-placement="top"
-                                    title="The derivative of a function of a real variable measures the sensitivity to change of the function value with respect to a change in its argument">first
-                                    derivative</span> (or slope)
+                                Or in other words, we need to find the point in the graph, where the derivative (or
+                                slope)
                                 has a flat gradient. If we refer to the function below where \(f(x) = x^2\), we note
                                 that its derivate, or slope is defined as
                                 \(f'(x) = 2x\) as shown on the right. If we followed along with the logic and set the
@@ -228,7 +244,7 @@
             <p>
                 Here, the function that we are trying to minimize is actually embedded in the name of the method, least
                 squares! We're trying to
-                find values \(\beta_0\) and \(\beta_1\) that returns us the least amount of:
+                find values \(\beta_0\) and \(\beta_1\) that returns us the least amount of errors, or squared errors to be exact:
                 $${ (y_{predicted} - y_{actual})^2 }$$
             </p>
             <div class="shadow-sm accordion mb-2 mt-2" id="leastSquaresProof">
@@ -328,7 +344,7 @@
 
             <p>
                 By applying the concepts of optimizing the squared errors and some algebraic manipulation, we end up
-                with the formulae:
+                with the 2 formulae which can be solved to obtain the values for the 2 variables. This is also known as a system of 2 equations with 2 unknowns:
                 $${ \beta_1 = \frac{\Sigma x_i \Sigma y_i - n \Sigma x_i y_i }{(\Sigma {x_i}^2) - n\Sigma (x_i)^2} }$$
                 $${ \beta_0 = \frac{1}{n}(\Sigma y_i - \beta_1 \Sigma x_i) }$$
 
@@ -431,11 +447,11 @@
 
             <div class="row">
                 <div class="col">
-                    <p class="lead">How to interpret results?</p>
+                    <p class="lead">Interpretation of the SLR model</p>
                 </div>
             </div>
             <p>
-                First off, let's discuss what the a SLR result looks and the kind of statements we can make from it.
+                We can first discuss what an example SLR model looks like and the kind of statements we can make from it.
                 From there, we can start to discuss the other
                 statistics from a typical SLR model and the kind of statements we can make about those. From the example
                 above, our
@@ -443,10 +459,10 @@
                 $${ y_i = 0.54 + 0.61 x_i + \epsilon }$$
 
                 A common misconception is saying that "if my observation \(x\) is 1, then \(y\) would be 1.5". While the
-                math does add up, the statement is inaccurate and does not reflect what the model
-                is inferring. To be more accurate, given the assumptions we have made, the model actually tells us that
-                \(y_i \sim{} N(\beta_0 + \beta_1 x_i, \sigma)\). This means that if we theoretically
-                repeat the scenario where \(x = 1\) many times, our model is telling us that:
+                math does add up, the statement is not totally accurate and does not reflect what the model
+                result should actually be conveying. To be more accurate, given the assumptions we have made, the model actually tells us that
+                \(y_i \sim{} N(\beta_0 + \beta_1 x_i, \sigma)\) or \(y_i \sim{} N(0.54 + 0.61 x_i, \sigma)\). This means that if we theoretically
+                repeat the scenario where \(x = 1\) many times, the model assumes that:
             <ol>
                 <li>\(y\) will probably take different values on each scenario, but is expected to average out to 1.5
                 </li>
@@ -556,7 +572,7 @@
                     <div id="validateThree" class="collapse" aria-labelledby="validate" data-parent="#validate">
                         <div class="card-body">
                             <p>
-                                The QQ-Plot basically plots the <span class="badge badge-primary">quantiles</span> of 2
+                                The QQ-Plot basically plots the quantiles of 2
                                 different distrubtions against each other.
                                 This is very useful in statistical analyses where we want visual evidence that a
                                 particular result follows a certain distribution.
@@ -662,5 +678,6 @@
 </body>
 <script src="/js/slr.js"></script>
 <script src="/js/slr_foc.js"></script>
+
 
 </html>
