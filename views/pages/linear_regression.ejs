@@ -3,7 +3,7 @@
 
 <head>
     <%- include("../partials/head"); %>
-    <%- include("../partials/ga_tracker"); %>
+        <%- include("../partials/ga_tracker"); %>
 </head>
 
 <body>
@@ -12,8 +12,8 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col">
-                    <h1 class="display-4">Simple Linear Regression: The Repository</h1>
-                    <!--<%- include("../partials/share_icons"); %>-->
+                    <h1 class="display-4">Interactive learning: The Basics of Simple Linear Regression</h1>
+                    <!-- <%- include("../partials/share_icons"); %> -->
                 </div>
             </div>
             <hr class="my-4">
@@ -67,16 +67,15 @@
                     <div id="collapseOne" class="collapse" aria-labelledby="assumptions" data-parent="#straightLine">
                         <div class="card-body">
                             <p>
-                                Given that the main feature of SLR models use a straight line to model phenomena, it
-                                would be a good
-                                idea to revisit the idea
-                                of what a line is mathematically. If you can recall from high school, a line in
-                                2-dimensional space can
-                                be defined as:
+                                Given that the main feature of SLR is to use a straight line to model phenomena, it
+                                would be sensible to revisit the mathematical definition of a line. 
+                                Recall that a line in a 2-dimensional grid can
+                                be defined algebraically as:
 
                                 $$ { y = mx + b } $$
 
-                                Here, y and x are the horizontal and vertical coordinates, m is the slope of the line,
+                                Here, y and x are the horizontal and vertical coordinates on some 2-dimensional grid, m
+                                is the slope of the line,
                                 and b is the
                                 intercept.
                                 The intercept is basically where the line crosses the y-axis. The slope, or the gradient
@@ -84,8 +83,8 @@
                                 can be calculated as:
                                 $${ m = \frac{ y_2 - y_1 }{ x_2 - x_1 } }$$
 
-                                Now with these parameters, we can construct any possible 2-dimensional line.
-
+                                Now with these parameters, we can construct and characterize any 2-dimensional line.
+                                Depending on the context, the interpretation of the slope and gradient will differ.
                             </p>
                         </div>
                     </div>
