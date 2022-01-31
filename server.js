@@ -60,11 +60,18 @@ app.get("/projects", (req, res) => {
 })
 
 
-app.get("/about", (req, res) => {
-    res.render("about", {
+app.get("/professional", (req, res) => {
+    res.render("professional", {
         currentPage: req.originalUrl
     });
 })
+
+app.get("/personal", (req, res) => {
+    res.render("personal", {
+        currentPage: req.originalUrl
+    });
+})
+
 
 
 app.get("/videos", (req, res) => {
