@@ -1,9 +1,10 @@
 # my-website
-This is an upgrade from the previous [portfolio](https://thelocalhost.netlify.app/), and will tie in nicely with other video projects.
+This is an upgrade from the previous portfolio (url no longer active), and will tie in nicely with other video projects.
 
 
 ## Documents
 [MVP board](https://trello.com/b/dz7IZgio/my-website)
+
 [Timeline Googlesheet](https://docs.google.com/spreadsheets/d/1vJ5wMNx1YcUgKz0vYcmP7RuJFyRvZwQSXub28TLHMjE/edit#gid=0)
 
 
