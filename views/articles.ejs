@@ -8,52 +8,24 @@
 
 <body>
     <%- include("partials/navbar"); %>
-        <div class="container">
-            <div class="row mt-2">
-                <div class="col-sm-4">
-                    <%- include("partials/article_titlecard", { title: "Explainable ML: A peek into the black box through SHAP"
-                        , photo: "/img/blackbox.jpg" ,
-                        description: "This article will provide a gentle, hands-on, introduction to SHAP (short for SHapley Additive exPlanations), one popular explanation model..."
-                        ,
-                        link: "https://www.actuaries.digital/2021/02/05/explainable-ml-a-peek-into-the-black-box-through-shap/"
-                        }); %>
-                </div>
-                <div class="col-sm-4">
-                    <%- include("partials/article_titlecard", {
-                        title: "Analytics Snippet: Version control, because the Recycle Bin doesn’t count" ,
-                        photo: "/img/folder.jpg" ,
-                        description: "The rest of the article will go through a simple example concerning a small team of three actuaries and how the Git system (implemented using GitHub) is used to version control scripts in their day to day tasks..."
-                        ,
-                        link: "https://www.actuaries.digital/2019/04/17/analytics-snippet-version-control-because-the-recycle-bin-doesnt-count/"
-                        }); %>
-                </div>
-                <div class="col-sm-4">
-                    <%- include("partials/article_titlecard", {
-                        title: "Analytics Snippet: Natural Language Processing Text Classification" ,
-                        photo: "/img/chatbubble.png" ,
-                        description: "In this article, we are going to be looking at one of the topics within Natural Language Processing: Text Classification. The way we are going to handle this problem can be split into 3 distinct parts..."
-                        ,
-                        link: "https://www.actuaries.digital/2018/11/20/analytics-snippet-natural-language-processing-text-classification/"
-                        }); %>
+
+    <div class="container mt-5">
+        <div class="row">
+            <% articles.forEach(function(article) { %>
+            <div class="col-sm-4 mt-5">
+                <div class="article-card">
+                    <a href="<%= article.link %>">
+                        <img src="<%= article.photo %>" alt="<%= article.title %>" class="img-fluid" width="600" height="400">
+                        <div class="article-details">
+                            <h5><%= article.title %></h5>
+                            <p><%= article.description %></p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col-sm-4">
-                    <%- include("partials/article_titlecard", { title: "The Simple Linear Regression Guide" ,
-                        photo: "/img/slr.png" ,
-                        description: "This entry will attempt to give the beginner an in-depth dive into simple linear regression (SLR). This includes the mathematics and the main assumptions behind it, as well as how to interpret the results..."
-                        , link: "/articles/linear_regression" }); %>
-                </div>
-                <div class="col-sm-4">
-                    <%- include("partials/article_titlecard", { title: "Feature Engineering Explained" , photo: "/img/chemistry.png" ,
-                        description: "This article will provide an introduction to the why and how of feature engineering, as well as a visual representation of its impacts..." , link: "/articles/feature_engineering" }); %>
-                </div>
-                <div class="col-sm-4">
-                    <%- include("partials/article_titlecard", { title: "Introduction to goodness of fit" , photo: "/img/fitting.jpg" ,
-                        description: "Notebook tutorials on the derivations and implementations for fitting and evaluating distributions" , link: "https://github.com/jtsw1990/stats-goodness-of-fit-tutorial" }); %>
-                </div>
-            </div>
+            <% }); %>
         </div>
+    </div>
 
 </body>
 </html>
