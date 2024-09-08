@@ -4,51 +4,6 @@
 <head>
     <%- include("partials/head"); %>
     <%- include("partials/ga_tracker"); %>
-    <style>
-        /* Container for the embedded items with hover effect */
-        .embed-hover {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .embed-hover:hover {
-            transform: scale(1.05);
-            z-index: 10;
-        }
-
-        /* Full size iframe */
-        .embed-hover iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Overlay text */
-        .embed-hover .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .embed-hover:hover .overlay {
-            opacity: 1;
-        }
-    </style>
 </head>
 
 <body>
@@ -220,5 +175,4 @@
 </body>
 <script src="/js/placeholder.js"></script>
 <script src="/js/slr.js"></script>
-
 </html>

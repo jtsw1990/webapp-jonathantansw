@@ -10,9 +10,7 @@ const favicon = require('serve-favicon');
 
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded({
-    extended: false
-}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // middleware for serving favicon
@@ -77,7 +75,7 @@ app.get("/articles", (req, res) => {
         articles: articles,
         currentPage: req.originalUrl
     });
-})
+});
 
 // Decide if we want to use slugs? or a router function?
 app.get("/articles/linear_regression", (req, res) => {
@@ -94,31 +92,55 @@ app.get("/articles/feature_engineering", (req, res) => {
 
 
 app.get("/projects", (req, res) => {
+    const projects = [
+        {
+            title: "Bastion Labs Pty Ltd",
+            photo: "/img/project_img_bl.png",
+            description: "Co-founder of data consultancy company focusing on analytics education",
+            link: "https://bastion-labs.co/index",
+        },
+        {
+            title: "Glimpse - GenAI pipeline",
+            photo: "/img/project_img_glimpse.png",
+            description: "Data pipeline that turns news API feeds into AI-generated images for instagram",
+            link: "https://github.com/jtsw1990/glimpse-gpt-pipeline",
+        },
+        {
+            title: "Net Zero CSR Dashboard",
+            photo: "/img/project_img_viz.png",
+            description: "Tableau dashboard that won 2023 SCOR Iron Viz and Tableau Viz of the day",
+            link: "https://public.tableau.com/app/profile/jonathan.tan2635/viz/SCORVizGames2023-TheInsideScoop/Summary",
+        },
+        {
+            title: "Visualizing an artificial neural network",
+            photo: "/img/project_img_ann.png",
+            description: "Interactive streamlit app graphing decision boundaries of a neural network",
+            link: "https://neuralnetworkarticle-grxitjvzn5qcx69ypbkdbz.streamlit.app/",
+        },
+        {
+            title: "Cult by JTLabs",
+            photo: "/img/project_img_nft.png",
+            description: "Collection of NFTs that are hand drawn and layered through a javascript engine",
+            link: "https://opensea.io/collection/cult-by-jtlabs",
+        },
+        {
+            title: "nojutsu.io: digital platform for tutors and students",
+            photo: "/img/project_img_nj.png",
+            description: "Web app built on Node.js and deployed on Digital Ocean for tutors and students to connect and offer services.",
+            link: "https://github.com/jtsw1990/tutor_website",
+        },
+        {
+            title: "Grab AI for S.E.A 2019 Competition",
+            photo: "/img/project_img_grab.jpg",
+            description: "Grab challenged participants in 2019 to come up with solutions on how AI and their data can be used to solve problems in SEA.",
+            link: "https://github.com/jtsw1990/grab-ai-safety",
+        }
+    ];
     res.render("projects", {
+        projects: projects,
         currentPage: req.originalUrl
     });
-})
-
-
-app.get("/professional", (req, res) => {
-    res.render("professional", {
-        currentPage: req.originalUrl
-    });
-})
-
-app.get("/personal", (req, res) => {
-    res.render("personal", {
-        currentPage: req.originalUrl
-    });
-})
-
-
-
-app.get("/videos", (req, res) => {
-    res.render("videos", {
-        currentPage: req.originalUrl
-    });
-})
+});
 
 
 app.get("/sitemap", (req, res) => {
