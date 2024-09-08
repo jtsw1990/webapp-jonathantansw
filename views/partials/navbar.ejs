@@ -1,67 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #e66f2b;">
-    <a class="navbar-brand" href="/"><img src="/img/avatar_2.png" style="height: 35px; width: 35px;"><b>Jonathan.T</b></a>
+<nav class="navbar fixed-top navbar-expand-sm navbar-light py-3">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-                <a class=<% if (currentPage.includes('home')) { %>
-                    "nav-link active"
-                    <% } else { %>
-                        "nav-link"
-                        <% } %>
-                            href="/">Home <span class="sr-only">(current)</span>
+                <a class=<% if (currentPage.includes('home')) { %> "nav-link active" <% } else { %> "nav-link" <% } %>
+                    href="/">Home <span class="sr-only">(current)</span></a>
                 </a>
             </li>
             <li class="nav-item">
-                <a class=<% if (currentPage.includes('article')) { %>
-                    "nav-link active"
-                    <% } else { %>
-                        "nav-link"
-                        <% } %>
-                            href="/articles">Articles
+                <a class=<% if (currentPage.includes('article')) { %> "nav-link active" <% } else { %> "nav-link"
+                    <% } %> href="/articles">Publications
                 </a>
             </li>
             <li class="nav-item">
-                <a class=<% if (currentPage.includes('project')) { %>
-                    "nav-link active"
-                    <% } else { %>
-                        "nav-link"
-                        <% } %>
-                            href="/projects">Projects
+                <a class=<% if (currentPage.includes('project')) { %> "nav-link active" <% } else { %> "nav-link"
+                    <% } %> href="/projects">Projects
                 </a>
             </li>
             <li class="nav-item">
-                <a class=<% if (currentPage.includes('videos')) { %>
-                    "nav-link active"
-                    <% } else { %>
-                        "nav-link"
-                        <% } %>
-                            href="/videos">Videos
-                </a>
+                <a class="nav-link" href="/assets/jonathan_resume.pdf">Resume</a>
             </li>
-
-            <li class="nav-item">
-                <a class=<% if (currentPage.includes('professional')) { %>
-                    "nav-link active"
-                    <% } else { %>
-                        "nav-link"
-                        <% } %>
-                            href="/professional">Professional
-                </a>
-            </li>
-            <!--
-            <li class="nav-item">
-                <a class=<% if (currentPage.includes('personal')) { %>
-                    "nav-link active"
-                    <% } else { %>
-                    "nav-link" 
-                    <% } %>
-                    href="/personal">Personal</a>
-            </li>
-             -->
         </ul>
     </div>
 </nav>
