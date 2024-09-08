@@ -38,37 +38,37 @@ app.get("/home", (req, res) => {
 app.get("/articles", (req, res) => {
     const articles = [{
             title: "Explainable ML: A peek into the black box through SHAP",
-            photo: "https://placehold.co/600x400",
-            description: "This article will provide a gentle, hands-on introduction to SHAP...",
+            photo: "img/article_img_shap.jpg",
+            description: "Actuaries Digital",
             link: "https://www.actuaries.digital/2021/02/05/explainable-ml-a-peek-into-the-black-box-through-shap/"
         },
         {
-            title: "Version control, because the Recycle Bin doesn’t count",
-            photo: "https://placehold.co/600x400",
-            description: "A simple example concerning a small team of actuaries using GitHub...",
+            title: "Git version control, because the Recycle Bin doesn’t count",
+            photo: "img/article_img_git.png",
+            description: "Actuaries Digital",
             link: "https://www.actuaries.digital/2019/04/17/analytics-snippet-version-control-because-the-recycle-bin-doesnt-count/"
         },
         {
             title: "Natural Language Processing Text Classification",
-            photo: "https://placehold.co/600x400",
-            description: "Looking at one of the topics within Natural Language Processing: Text Classification...",
+            photo: "img/article_img_nlp.png",
+            description: "Actuaries Digital",
             link: "https://www.actuaries.digital/2018/11/20/analytics-snippet-natural-language-processing-text-classification/"
         },
         {
             title: "The Simple Linear Regression Guide",
-            photo: "https://placehold.co/600x400",
+            photo: "img/article_img_slr.png",
             description: "In-depth dive into simple linear regression, including mathematics and assumptions...",
             link: "/articles/linear_regression"
         },
         {
             title: "Feature Engineering Explained",
-            photo: "https://placehold.co/600x400",
+            photo: "img/article_img_feng.png",
             description: "An introduction to the why and how of feature engineering, with visual representation...",
             link: "/articles/feature_engineering"
         },
         {
             title: "Introduction to Goodness of Fit",
-            photo: "https://placehold.co/600x400",
+            photo: "img/article_img_gof.png",
             description: "Notebook tutorials on fitting and evaluating distributions...",
             link: "https://github.com/jtsw1990/stats-goodness-of-fit-tutorial"
         }
