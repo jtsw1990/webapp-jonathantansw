@@ -37,7 +37,7 @@ app.get("/articles", (req, res) => {
     const articles = [
         {
             title: "Visualising Data",
-            photo: "img/article_img_viz.jpg",
+            photo: "img/article_img_viz.png",
             description: "Actuaries Digital",
             link: "https://www.actuaries.digital/2024/11/12/visualising-data/"
         },
