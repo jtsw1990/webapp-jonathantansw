@@ -34,7 +34,14 @@ app.get("/home", (req, res) => {
 
 
 app.get("/articles", (req, res) => {
-    const articles = [{
+    const articles = [
+        {
+            title: "Visualising Data",
+            photo: "img/article_img_viz.jpg",
+            description: "Actuaries Digital",
+            link: "https://www.actuaries.digital/2024/11/12/visualising-data/"
+        },
+        {
             title: "Explainable ML: A peek into the black box through SHAP",
             photo: "img/article_img_shap.jpg",
             description: "Actuaries Digital",
